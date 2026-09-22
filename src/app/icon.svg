@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="aventipc-icon-title">
+  <title id="aventipc-icon-title">AventiPC</title>
+  <defs>
+    <linearGradient id="g" gradientUnits="userSpaceOnUse" x1="128.79" y1="0" x2="382.23" y2="0">
+      <stop offset="0%" stop-color="#3D7BF0"/>
+      <stop offset="22%" stop-color="#7C7DE8"/>
+      <stop offset="45%" stop-color="#B48CE1"/>
+      <stop offset="66%" stop-color="#D8A6DC"/>
+      <stop offset="84%" stop-color="#EBC7D9"/>
+      <stop offset="100%" stop-color="#F4E4DF"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="116" fill="#15121D"/>
+  <path d="M147.96 384.84 L252.42 131.48 Q256 122.81 259.55 131.48 L363.07 384.84" fill="none" stroke="url(#g)" stroke-width="38.33" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

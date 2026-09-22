@@ -1,36 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AventiPC
 
-## Getting Started
+Sito ecommerce dimostrativo per la vendita di notebook, PC desktop, gaming e workstation in Italia. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
 
-First, run the development server:
+## Avvio
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pnpm install
+pnpm dev        # http://localhost:3000
+pnpm build && pnpm start
+pnpm lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Imposta `NEXT_PUBLIC_SITE_URL` (default `https://www.aventipc.it`) per canonical, sitemap e structured data.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Struttura
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app` — route: home, `/prodotti` (catalogo con filtri), `/prodotti/[slug]`, `/categorie/[slug]`, `/marchi/[slug]`, `/carrello`, `/checkout`, pagine informative `/[slug]`, `sitemap.ts`, `robots.ts`, `manifest.ts`, immagini Open Graph.
+- `src/data/products.ts` — catalogo tipizzato (17 prodotti) e helper di ricerca.
+- `src/content/*` — testi in italiano: categorie, marchi, FAQ, pagine legali, navigazione.
+- `src/lib/seo.ts` — metadata standard e JSON-LD (Organization, WebSite, Product, BreadcrumbList, ItemList, CollectionPage, FAQPage).
+- `src/store/cart.ts` — carrello lato client (zustand + localStorage).
+- `docs/superpowers/specs/2026-09-22-aventipc-design.md` — design system e regole SEO.
 
-## Learn More
+## Note
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Le immagini prodotto sono segnaposto scaricati da siti dei produttori e Unsplash (fonte registrata in `products.ts`); da sostituire con foto proprie prima della pubblicazione.
+- Il checkout è dimostrativo: nessun provider di pagamento collegato, il numero d'ordine è generato localmente.
+- P.IVA, indirizzo e recapiti in `src/content/site.ts` sono segnaposto.

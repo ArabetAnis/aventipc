@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ---------- Brand tokens (derived from the AventiPC wordmark) ---------- */
+@theme {
+  --color-aventi-blue: #3d7bf0;
+  --color-periwinkle: #7c7de8;
+  --color-lilac: #b48ce1;
+  --color-orchid: #d8a6dc;
+  --color-blush: #ebc7d9;
+  --color-cream: #f4e4df;
+
+  --color-ink: #15121d;
+  --color-ink-soft: #5a5566;
+  --color-ink-muted: #8b8697;
+  --color-paper: #fdfcfe;
+  --color-paper-tint: #f7f4fa;
+  --color-line: #e8e3f0;
+  --color-line-strong: #d9d2e4;
+  --color-success: #1f8a5b;
+  --color-danger: #c2415b;
+
+  --radius-tile: 24px;
+  --radius-card: 16px;
+
+  --text-hero: 3.75rem;
+  --text-hero--line-height: 1.02;
+  --text-hero--letter-spacing: -0.025em;
+  --text-display: 2.75rem;
+  --text-display--line-height: 1.06;
+  --text-display--letter-spacing: -0.02em;
+  --text-title: 1.9375rem;
+  --text-title--line-height: 1.15;
+  --text-title--letter-spacing: -0.015em;
+  --text-heading: 1.5625rem;
+  --text-heading--line-height: 1.2;
+  --text-heading--letter-spacing: -0.01em;
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.5;
+
+  --container-page: 80rem;
+
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ---------- Base ---------- */
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-aventi-blue);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: color-mix(in oklab, var(--color-lilac) 35%, white);
+  color: var(--color-ink);
+}
+
+/* ---------- Brand gradient utilities ---------- */
+@utility brand-gradient {
+  background-image: linear-gradient(
+    90deg,
+    #3d7bf0 0%,
+    #7c7de8 22%,
+    #b48ce1 45%,
+    #d8a6dc 66%,
+    #ebc7d9 84%,
+    #f4e4df 100%
+  );
+}
+
+/* Deeper right-hand stops so text/buttons stay legible on white. */
+@utility brand-gradient-strong {
+  background-image: linear-gradient(90deg, #3d7bf0 0%, #6f7be9 35%, #9f86e0 70%, #bf8bd6 100%);
+}
+
+@utility text-brand-gradient {
+  background-image: linear-gradient(90deg, #3d7bf0 0%, #7c7de8 35%, #b48ce1 70%, #c98fd0 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Soft page-wide washes. Fixed so they fade under everything. */
+@utility backdrop-washes {
+  background:
+    radial-gradient(60% 55% at 6% -4%, color-mix(in srgb, #3d7bf0 17%, transparent), transparent 70%),
+    radial-gradient(48% 46% at 96% 24%, color-mix(in srgb, #b48ce1 18%, transparent), transparent 70%),
+    radial-gradient(56% 48% at 14% 104%, color-mix(in srgb, #ebc7d9 26%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 80% 92%, color-mix(in srgb, #f4e4df 60%, transparent), transparent 70%),
+    var(--color-paper);
+}
+
+/* Halo behind hero product imagery: the wordmark gradient, blurred and faded. */
+@utility brand-halo {
+  background:
+    radial-gradient(ellipse 45% 55% at 22% 50%, color-mix(in srgb, #3d7bf0 62%, transparent), transparent 100%),
+    radial-gradient(ellipse 45% 60% at 52% 50%, color-mix(in srgb, #b48ce1 70%, transparent), transparent 100%),
+    radial-gradient(ellipse 45% 55% at 82% 50%, color-mix(in srgb, #ebc7d9 95%, transparent), transparent 100%);
+  filter: blur(40px);
+}
+
+/* One page-load moment for the hero. */
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-hero-in {
+  animation: hero-in 700ms var(--ease-out-soft) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+/* Native <details> disclosure without the marker */
+summary::-webkit-details-marker {
+  display: none;
 }
