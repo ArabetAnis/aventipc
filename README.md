@@ -2,6 +2,8 @@
 
 Sito ecommerce dimostrativo per la vendita di notebook, PC desktop, gaming e workstation in Italia. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
 
+Demo online (export statico su GitHub Pages): https://arabetanis.github.io/aventipc/
+
 ## Avvio
 
 ```bash
