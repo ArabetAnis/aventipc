@@ -6,6 +6,7 @@ import { products, getProductBySlug } from "@/data/products";
 import { brands } from "@/content/brands";
 import { formatPrice } from "@/lib/format";
 
+export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 

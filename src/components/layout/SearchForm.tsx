@@ -1,4 +1,5 @@
 import { Search } from "lucide-react";
+import { BASE_PATH } from "@/lib/catalog";
 
 interface SearchFormProps {
   defaultValue?: string;
@@ -11,7 +12,7 @@ interface SearchFormProps {
 export function SearchForm({ defaultValue = "", className = "", size = "sm" }: SearchFormProps) {
   const height = size === "lg" ? "h-12 text-base" : "h-10 text-sm";
   return (
-    <form action="/prodotti" method="get" role="search" className={`relative ${className}`}>
+    <form action={`${BASE_PATH}/prodotti`} method="get" role="search" className={`relative ${className}`}>
       <label htmlFor={`cerca-${size}`} className="sr-only">
         Cerca un prodotto
       </label>

@@ -7,6 +7,8 @@ import { products } from "@/data/products";
 
 const CONTENT_UPDATED = new Date("2026-09-22");
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const url = (path: string) => `${site.url}${path}`;
 

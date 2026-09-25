@@ -2,32 +2,7 @@ import Link from "next/link";
 import { categories } from "@/content/categories";
 import { brands } from "@/content/brands";
 import { SortSelect } from "@/components/catalog/SortSelect";
-
-export interface CatalogQuery {
-  categoria?: string;
-  marca?: string;
-  ordina?: string;
-  q?: string;
-}
-
-export const SORT_OPTIONS = [
-  { value: "rilevanza", label: "Rilevanza" },
-  { value: "prezzo-crescente", label: "Prezzo crescente" },
-  { value: "prezzo-decrescente", label: "Prezzo decrescente" },
-  { value: "nome", label: "Nome" },
-] as const;
-
-/** Builds /prodotti?… keeping the other parameters. Empty values are dropped. */
-export function buildQuery(base: CatalogQuery, patch: Partial<CatalogQuery>): string {
-  const merged = { ...base, ...patch };
-  const params = new URLSearchParams();
-  for (const key of ["q", "categoria", "marca", "ordina"] as const) {
-    const value = merged[key];
-    if (value && !(key === "ordina" && value === "rilevanza")) params.set(key, value);
-  }
-  const qs = params.toString();
-  return qs ? `/prodotti?${qs}` : "/prodotti";
-}
+import { buildQuery, SORT_OPTIONS, BASE_PATH, type CatalogQuery } from "@/lib/catalog";
 
 function Chip({ href, active, children }: { href: string; active: boolean; children: React.ReactNode }) {
   return (
@@ -80,7 +55,7 @@ export function CatalogFilters({ query, total }: { query: CatalogQuery; total: n
             </>
           ) : null}
         </p>
-        <form action="/prodotti" method="get" className="flex items-center gap-2">
+        <form action={`${BASE_PATH}/prodotti`} method="get" className="flex items-center gap-2">
           {query.q ? <input type="hidden" name="q" value={query.q} /> : null}
           {query.categoria ? <input type="hidden" name="categoria" value={query.categoria} /> : null}
           {query.marca ? <input type="hidden" name="marca" value={query.marca} /> : null}
