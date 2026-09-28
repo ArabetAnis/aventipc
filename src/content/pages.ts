@@ -73,49 +73,34 @@ export const staticPages: StaticPage[] = [
   },
   {
     slug: "privacy",
-    title: "Informativa sulla privacy",
-    seoTitle: "Informativa sulla privacy | AventiPC",
-    seoDescription:
-      "Come AventiPC S.r.l. raccoglie e usa i tuoi dati personali quando visiti il sito o fai un ordine, e quali diritti hai secondo il GDPR.",
-    intro:
-      "Questa informativa spiega quali dati personali raccogliamo quando visiti www.aventipc.it o fai un ordine, perché li trattiamo e quali diritti hai, ai sensi del Regolamento (UE) 2016/679 (GDPR) e del D.Lgs. 196/2003 come modificato dal D.Lgs. 101/2018.",
+    title: "Privacy",
+    seoTitle: "Informativa privacy | AventiPC",
+    seoDescription: "Quali dati personali raccoglie AventiPC quando visiti il sito o ci contatti, perché li usa e quali diritti hai secondo il GDPR.",
+    intro: "Questa informativa spiega quali dati personali trattiamo quando visiti il sito o ci scrivi, e quali diritti hai secondo il Regolamento UE 2016/679 (GDPR).",
     sections: [
       {
         heading: "Titolare del trattamento",
-        paragraphs: [
-          "Il titolare del trattamento è AventiPC S.r.l., Via Alessandro Volta 12, 20121 Milano, partita IVA IT01234567890, email info@aventipc.it. Per qualsiasi richiesta relativa ai tuoi dati puoi scrivere a questo indirizzo.",
-        ],
+        paragraphs: ["Il titolare è AventiPC, Via Alessandro Volta 12, 20121 Milano. Per ogni richiesta sulla privacy scrivi a info@aventipc.it."],
       },
       {
-        heading: "Quali dati raccogliamo e perché",
+        heading: "Quali dati raccogliamo",
         paragraphs: [
-          "Dati di contatto: nome, indirizzo di consegna e di fatturazione, email, telefono, codice fiscale o partita IVA. Li usiamo per eseguire il contratto di vendita, spedire l'ordine, emettere la fattura e gestire garanzia e resi (art. 6, par. 1, lett. b GDPR) e per adempiere agli obblighi fiscali e contabili (art. 6, par. 1, lett. c).",
-          "Dati di navigazione: indirizzo IP, tipo di browser e pagine visitate, raccolti in forma aggregata per garantire il funzionamento e la sicurezza del sito (art. 6, par. 1, lett. f, legittimo interesse). Dati di contatto: se ci scrivi, usiamo email e contenuto del messaggio per risponderti.",
-          "Non raccogliamo i dati della tua carta di pagamento: sono gestiti direttamente dal fornitore del servizio di pagamento (PayPal, Klarna o il circuito della carta), che agisce come autonomo titolare.",
+          "Se ci scrivi dal modulo di contatto o per email trattiamo nome, indirizzo email e il contenuto del messaggio, solo per risponderti.",
+          "Gli acquisti avvengono su eBay o Subito: i dati di pagamento e di spedizione li tratta la piattaforma, secondo la sua informativa.",
         ],
       },
       {
         heading: "Cookie",
-        paragraphs: [
-          "Il sito usa solo cookie tecnici necessari al funzionamento, ad esempio per ricordare il contenuto del carrello, che non richiedono consenso. Non usiamo cookie di profilazione né strumenti di tracciamento pubblicitario. Eventuali statistiche sul traffico sono raccolte in forma anonima e aggregata.",
-        ],
-      },
-      {
-        heading: "Con chi condividiamo i dati",
-        paragraphs: [
-          "I dati vengono comunicati solo a chi serve per completare l'ordine: corrieri per la consegna, fornitori di servizi di pagamento, il commercialista e il Sistema di Interscambio per la fatturazione elettronica, e il fornitore di hosting che ospita il sito nell'Unione Europea. Questi soggetti trattano i dati come responsabili del trattamento o come autonomi titolari, nel rispetto del GDPR. Non vendiamo né cediamo i dati a terzi per finalità di marketing e non li trasferiamo fuori dall'Unione Europea.",
-        ],
+        paragraphs: ["Il sito non usa cookie di profilazione né strumenti di tracciamento pubblicitario."],
       },
       {
         heading: "Per quanto tempo conserviamo i dati",
-        paragraphs: [
-          "I dati di ordine e fatturazione sono conservati per 10 anni, come richiesto dalla normativa fiscale. I dati di contatto per richieste di informazioni sono conservati per il tempo necessario a rispondere e comunque non oltre 24 mesi. I log di navigazione sono conservati per un massimo di 12 mesi.",
-        ],
+        paragraphs: ["Conserviamo i messaggi per il tempo necessario a rispondere e al massimo per 24 mesi, poi li cancelliamo."],
       },
       {
         heading: "I tuoi diritti",
         paragraphs: [
-          "Puoi chiedere in ogni momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento e la portabilità, e puoi opporti al trattamento (artt. 15–22 GDPR) scrivendo a info@aventipc.it. Rispondiamo entro 30 giorni. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (www.garanteprivacy.it).",
+          "Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati scrivendo a info@aventipc.it. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.",
         ],
       },
     ],
