@@ -1,19 +1,8 @@
 /** Shared catalogue types for AventiPC. Keep this file free of runtime code. */
 
-export type CategorySlug =
-  | "notebook"
-  | "desktop"
-  | "gaming"
-  | "workstation"
-  | "mini-pc";
+export type BrandSlug = "dell" | "lenovo";
 
-export type BrandSlug =
-  | "apple"
-  | "dell"
-  | "hp"
-  | "lenovo"
-  | "asus"
-  | "aventipc";
+export type Condition = "used" | "refurbished" | "new";
 
 export type Availability = "in_stock" | "preorder" | "out_of_stock";
 
@@ -26,8 +15,8 @@ export interface ProductImage {
   height: number;
   /** Where the placeholder image came from (URL). Demo attribution only. */
   source: string;
-  /** "manufacturer" for official press/product shots, "unsplash" for stock photos. */
-  license: "manufacturer" | "unsplash";
+  /** "own" for our photos of the actual item, "manufacturer" for press shots. */
+  license: "own" | "manufacturer";
 }
 
 export interface ProductSpec {
@@ -39,7 +28,9 @@ export interface Product {
   slug: string;
   name: string;
   brand: BrandSlug;
-  category: CategorySlug;
+  /** Short product type shown on cards, e.g. "Notebook", "Mini PC". */
+  kind: string;
+  condition: Condition;
   /** One sentence, Italian, ≤ 140 chars. Used in cards and meta descriptions. */
   shortDescription: string;
   /** 2–3 paragraphs in Italian. Each array item is one paragraph. */
@@ -48,6 +39,8 @@ export interface Product {
   price: number;
   /** Optional crossed-out price in cents. */
   compareAtPrice?: number;
+  /** Where the item is actually sold. Empty values render as unlinked buttons. */
+  marketplaces?: { ebay?: string; subito?: string };
   sku: string;
   /** EAN/GTIN-13 when known. */
   gtin?: string;
@@ -56,23 +49,10 @@ export interface Product {
   specs: ProductSpec[];
   /** 3–5 short bullets in Italian. */
   highlights: string[];
-  rating?: { value: number; count: number };
   tags?: string[];
   featured?: boolean;
   /** ISO date (YYYY-MM-DD) for sitemap lastModified. */
   updatedAt: string;
-}
-
-export interface Category {
-  slug: CategorySlug;
-  name: string;
-  /** Short line under the name, Italian. */
-  tagline: string;
-  /** 1–2 paragraphs, Italian, for the category landing page. */
-  description: string[];
-  seoTitle: string;
-  seoDescription: string;
-  image: { src: string; alt: string; width: number; height: number; source: string };
 }
 
 export interface Brand {
