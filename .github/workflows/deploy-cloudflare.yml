@@ -1,0 +1,72 @@
+name: Deploy to Cloudflare Pages
+
+# Builds the static export for https://aventipc.com and uploads it to Cloudflare Pages.
+# Inactive until the repository has two secrets:
+#   CLOUDFLARE_API_TOKEN  – API token with the "Cloudflare Pages: Edit" account permission
+#   CLOUDFLARE_ACCOUNT_ID – shown in the Cloudflare dashboard sidebar
+# Optional repository variable SITE_URL overrides the canonical address.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloudflare-pages
+  cancel-in-progress: true
+
+env:
+  PROJECT_NAME: aventipc
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.secrets.outputs.enabled }}
+    steps:
+      - id: secrets
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if [ -n "$TOKEN" ] && [ -n "$ACCOUNT" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Cloudflare deploy skipped: add CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID repository secrets to enable it."
+          fi
+
+  deploy:
+    needs: check
+    if: needs.check.outputs.enabled == 'true'
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Build static export
+        env:
+          NEXT_PUBLIC_STATIC_EXPORT: "1"
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://aventipc.com' }}
+        run: pnpm build
+      - name: Create the Pages project on first run
+        run: |
+          if out=$(pnpm dlx wrangler@4 pages project create "$PROJECT_NAME" --production-branch=main 2>&1); then
+            echo "$out"
+          elif echo "$out" | grep -qiE "already (exists|in use)|8000002"; then
+            echo "Project $PROJECT_NAME already exists."
+          else
+            echo "$out"; exit 1
+          fi
+      - name: Deploy
+        run: pnpm dlx wrangler@4 pages deploy out --project-name="$PROJECT_NAME" --branch=main --commit-hash="$GITHUB_SHA" --commit-message="${GITHUB_SHA::7}"

@@ -63,10 +63,10 @@ export const staticPages: StaticPage[] = [
     slug: "contatti",
     title: "Contatti",
     seoTitle: "Contatti | AventiPC",
-    seoDescription: "Scrivi a info@aventipc.it o chiama il +39 02 1234 5678 dal lunedì al venerdì, 9–18, per domande sui computer in vendita.",
+    seoDescription: "Scrivi a info@aventipc.com o chiama il +39 02 1234 5678 dal lunedì al venerdì, 9–18, per domande sui computer in vendita.",
     intro: "Per domande su un computer, altre foto o un appuntamento per vederlo di persona puoi scriverci o chiamarci.",
     sections: [
-      { heading: "Email", paragraphs: ["Scrivi a info@aventipc.it. Rispondiamo di solito entro un giorno lavorativo."] },
+      { heading: "Email", paragraphs: ["Scrivi a info@aventipc.com. Rispondiamo di solito entro un giorno lavorativo."] },
       { heading: "Telefono", paragraphs: ["Chiama il +39 02 1234 5678 dal lunedì al venerdì, dalle 9 alle 18."] },
       { heading: "Dove siamo", paragraphs: ["Via Alessandro Volta 12, 20121 Milano. Visite solo su appuntamento."] },
     ],
@@ -80,7 +80,7 @@ export const staticPages: StaticPage[] = [
     sections: [
       {
         heading: "Titolare del trattamento",
-        paragraphs: ["Il titolare è AventiPC, Via Alessandro Volta 12, 20121 Milano. Per ogni richiesta sulla privacy scrivi a info@aventipc.it."],
+        paragraphs: ["Il titolare è AventiPC, Via Alessandro Volta 12, 20121 Milano. Per ogni richiesta sulla privacy scrivi a info@aventipc.com."],
       },
       {
         heading: "Quali dati raccogliamo",
@@ -100,7 +100,7 @@ export const staticPages: StaticPage[] = [
       {
         heading: "I tuoi diritti",
         paragraphs: [
-          "Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati scrivendo a info@aventipc.it. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.",
+          "Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati scrivendo a info@aventipc.com. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.",
         ],
       },
     ],
@@ -114,7 +114,7 @@ export const staticPages: StaticPage[] = [
     sections: [
       {
         heading: "Chi siamo",
-        paragraphs: ["Il sito è gestito da AventiPC, Via Alessandro Volta 12, 20121 Milano, email info@aventipc.it."],
+        paragraphs: ["Il sito è gestito da AventiPC, Via Alessandro Volta 12, 20121 Milano, email info@aventipc.com."],
       },
       {
         heading: "Informazioni sui prodotti",

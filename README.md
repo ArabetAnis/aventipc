@@ -13,7 +13,7 @@ pnpm build && pnpm start
 pnpm lint
 ```
 
-Imposta `NEXT_PUBLIC_SITE_URL` (default `https://www.aventipc.it`) per canonical, sitemap e structured data.
+Imposta `NEXT_PUBLIC_SITE_URL` (default `https://aventipc.com`) per canonical, sitemap e structured data.
 
 ## Struttura
 

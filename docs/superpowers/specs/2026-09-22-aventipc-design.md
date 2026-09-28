@@ -16,7 +16,7 @@ built for search from the ground up.
 ## Decisions taken without the client (assumptions)
 
 - Language: Italian only, `lang="it"`, locale `it_IT`. No i18n routing.
-- Domain used in canonical URLs and structured data: `https://www.aventipc.it`
+- Domain used in canonical URLs and structured data: `https://aventipc.com` (changed from www.aventipc.it on 2026-09-28)
   (configurable through `NEXT_PUBLIC_SITE_URL`).
 - No payment provider. Checkout collects shipping details and produces a fake
   order number. Stripe or PayPal can be added later.

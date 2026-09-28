@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { site } from "@/content/site";
+import { absoluteUrl } from "@/lib/seo";
 import { brands } from "@/content/brands";
 import { staticPages } from "@/content/pages";
 import { products } from "@/data/products";
@@ -9,7 +9,7 @@ const CONTENT_UPDATED = new Date("2026-09-28");
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const url = (path: string) => `${site.url}${path}`;
+  const url = absoluteUrl;
 
   const home: MetadataRoute.Sitemap = [
     { url: url("/"), lastModified: CONTENT_UPDATED, changeFrequency: "daily", priority: 1 },

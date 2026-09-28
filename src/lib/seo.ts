@@ -5,9 +5,23 @@ import { priceToDecimal } from "@/lib/format";
 
 export const SITE_NAME = site.name;
 
-/** Builds an absolute URL on the canonical domain. */
+/** The static export uses trailing-slash URLs (/prodotti/), so every page link we publish must match. */
+const TRAILING_SLASH = process.env.NEXT_PUBLIC_STATIC_EXPORT === "1";
+
+/**
+ * Builds an absolute URL on the canonical domain. In the static export, page paths get a
+ * trailing slash so sitemap and JSON-LD URLs match the canonical tag; file paths
+ * (anything with an extension, e.g. /images/x.jpg) are left alone.
+ */
 export function absoluteUrl(path = "/"): string {
-  return new URL(path, site.url).toString();
+  let p = path;
+  if (TRAILING_SLASH) {
+    const cut = p.search(/[?#]/);
+    const base = cut === -1 ? p : p.slice(0, cut);
+    const rest = cut === -1 ? "" : p.slice(cut);
+    if (!base.endsWith("/") && !/\.[a-z0-9]+$/i.test(base)) p = `${base}/${rest}`;
+  }
+  return new URL(p, site.url).toString();
 }
 
 interface PageMetadataInput {
