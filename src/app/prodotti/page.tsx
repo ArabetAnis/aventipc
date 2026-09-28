@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { categories } from "@/content/categories";
 import { brands } from "@/content/brands";
 import { pageMetadata, itemListJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { parseQuery, applyQuery, catalogTitle, catalogTagline, IS_STATIC_EXPORT } from "@/lib/catalog";
@@ -22,8 +21,8 @@ const crumbs = [
 
 const defaultMetadata = () =>
   pageMetadata({
-    title: "Tutti i prodotti: notebook, desktop, gaming e workstation",
-    description: "Il catalogo completo AventiPC: notebook, PC desktop, gaming, workstation e mini PC con spedizione gratuita in Italia e garanzia 2 anni.",
+    title: "PC e notebook usati in vendita",
+    description: "Notebook e mini PC usati AventiPC con foto reali e caratteristiche verificate. Acquisto su eBay o Subito.",
     path: "/prodotti",
   });
 
@@ -35,15 +34,11 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
   if (query.q) {
     return pageMetadata({ title: `Risultati per “${query.q}”`, description: `Prodotti che corrispondono a “${query.q}” nel catalogo AventiPC.`, path: "/prodotti", noindex: true });
   }
-  if (query.categoria && !query.marca && onlySort) {
-    const c = categories.find((x) => x.slug === query.categoria)!;
-    return { ...pageMetadata({ title: c.name, description: c.seoDescription, path: `/categorie/${c.slug}` }), title: { absolute: c.seoTitle } };
-  }
-  if (query.marca && !query.categoria && onlySort) {
+  if (query.marca && onlySort) {
     const b = brands.find((x) => x.slug === query.marca)!;
     return { ...pageMetadata({ title: b.name, description: b.seoDescription, path: `/marchi/${b.slug}` }), title: { absolute: b.seoTitle } };
   }
-  return { ...defaultMetadata(), robots: query.categoria || query.marca || !onlySort ? { index: false, follow: true } : undefined };
+  return { ...defaultMetadata(), robots: query.marca || !onlySort ? { index: false, follow: true } : undefined };
 }
 
 export default async function CatalogPage({ searchParams }: Props) {

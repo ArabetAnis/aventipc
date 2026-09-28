@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { categories } from "@/content/categories";
 import { brands } from "@/content/brands";
 import { SortSelect } from "@/components/catalog/SortSelect";
 import { buildQuery, SORT_OPTIONS, BASE_PATH, type CatalogQuery } from "@/lib/catalog";
@@ -20,19 +19,9 @@ function Chip({ href, active, children }: { href: string; active: boolean; child
 
 /** Link-based filters (crawlable, no JavaScript needed) plus a sort select. */
 export function CatalogFilters({ query, total }: { query: CatalogQuery; total: number }) {
-  const hasFilters = Boolean(query.categoria || query.marca || query.q || (query.ordina && query.ordina !== "rilevanza"));
+  const hasFilters = Boolean(query.marca || query.q || (query.ordina && query.ordina !== "rilevanza"));
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap gap-2" role="group" aria-label="Filtra per categoria">
-        <Chip href={buildQuery(query, { categoria: undefined })} active={!query.categoria}>
-          Tutte le categorie
-        </Chip>
-        {categories.map((c) => (
-          <Chip key={c.slug} href={buildQuery(query, { categoria: c.slug })} active={query.categoria === c.slug}>
-            {c.name}
-          </Chip>
-        ))}
-      </div>
       <div className="flex flex-wrap gap-2" role="group" aria-label="Filtra per marca">
         <Chip href={buildQuery(query, { marca: undefined })} active={!query.marca}>
           Tutte le marche
@@ -57,7 +46,6 @@ export function CatalogFilters({ query, total }: { query: CatalogQuery; total: n
         </p>
         <form action={`${BASE_PATH}/prodotti`} method="get" className="flex items-center gap-2">
           {query.q ? <input type="hidden" name="q" value={query.q} /> : null}
-          {query.categoria ? <input type="hidden" name="categoria" value={query.categoria} /> : null}
           {query.marca ? <input type="hidden" name="marca" value={query.marca} /> : null}
           <label htmlFor="ordina" className="text-sm text-ink-soft">
             Ordina per

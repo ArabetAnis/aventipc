@@ -1,11 +1,11 @@
 import Image from "next/image";
-import type { Category } from "@/types/catalog";
+import type { LifestyleImage } from "@/data/lifestyle";
 
 interface CollectionHeaderProps {
   title: string;
   tagline: string;
   count: number;
-  image?: Category["image"];
+  image?: LifestyleImage;
 }
 
 export function CollectionHeader({ title, tagline, count, image }: CollectionHeaderProps) {

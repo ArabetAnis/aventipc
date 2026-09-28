@@ -1,10 +1,8 @@
 import type { Product } from "@/types/catalog";
 import { products, searchProducts } from "@/data/products";
-import { categories } from "@/content/categories";
 import { brands } from "@/content/brands";
 
 export interface CatalogQuery {
-  categoria?: string;
   marca?: string;
   ordina?: string;
   q?: string;
@@ -24,13 +22,11 @@ function first(v: string | string[] | undefined): string | undefined {
   return s ? s.slice(0, 80) : undefined;
 }
 
-/** Normalises raw query parameters: unknown categories/brands are dropped. */
+/** Normalises raw query parameters: unknown brands are dropped. */
 export function parseQuery(raw: RawParams): CatalogQuery {
-  const categoria = first(raw.categoria);
   const marca = first(raw.marca);
   return {
     q: first(raw.q)?.trim() || undefined,
-    categoria: categories.some((c) => c.slug === categoria) ? categoria : undefined,
     marca: brands.some((b) => b.slug === marca) ? marca : undefined,
     ordina: first(raw.ordina),
   };
@@ -38,7 +34,6 @@ export function parseQuery(raw: RawParams): CatalogQuery {
 
 export function applyQuery(query: CatalogQuery): Product[] {
   let list = query.q ? searchProducts(query.q) : [...products];
-  if (query.categoria) list = list.filter((p) => p.category === query.categoria);
   if (query.marca) list = list.filter((p) => p.brand === query.marca);
   switch (query.ordina) {
     case "prezzo-crescente":
@@ -60,7 +55,7 @@ export function applyQuery(query: CatalogQuery): Product[] {
 export function buildQuery(base: CatalogQuery, patch: Partial<CatalogQuery>): string {
   const merged = { ...base, ...patch };
   const params = new URLSearchParams();
-  for (const key of ["q", "categoria", "marca", "ordina"] as const) {
+  for (const key of ["q", "marca", "ordina"] as const) {
     const value = merged[key];
     if (value && !(key === "ordina" && value === "rilevanza")) params.set(key, value);
   }
@@ -71,13 +66,13 @@ export function buildQuery(base: CatalogQuery, patch: Partial<CatalogQuery>): st
 /** Title shown as h1 for a given query. */
 export function catalogTitle(query: CatalogQuery): string {
   if (query.q) return `Risultati per “${query.q}”`;
-  const category = categories.find((c) => c.slug === query.categoria);
-  return category ? category.name : "Tutti i prodotti";
+  const brand = brands.find((b) => b.slug === query.marca);
+  return brand ? `${brand.name} usati` : "Tutti i prodotti";
 }
 
 export function catalogTagline(query: CatalogQuery): string {
-  const category = categories.find((c) => c.slug === query.categoria);
-  return category ? category.tagline : "Notebook, PC desktop, gaming, workstation e mini PC. Spedizione gratuita in Italia e garanzia 2 anni.";
+  const brand = brands.find((b) => b.slug === query.marca);
+  return brand ? brand.tagline : "Notebook e mini PC usati, con foto reali dell'esemplare in vendita. Si acquistano su eBay o Subito.";
 }
 
 /** True when the site is built as a static export (GitHub Pages showcase). */

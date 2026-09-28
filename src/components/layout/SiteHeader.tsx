@@ -1,8 +1,6 @@
 import Link from "next/link";
-import { ShoppingBag } from "lucide-react";
 import { mainNav } from "@/content/nav";
 import { Wordmark } from "@/components/brand/Wordmark";
-import { CartBadge } from "@/components/cart/CartBadge";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { SearchForm } from "@/components/layout/SearchForm";
 
@@ -28,14 +26,6 @@ export function SiteHeader() {
 
         <div className="ml-auto flex items-center gap-1 sm:gap-2">
           <SearchForm className="hidden w-64 md:block xl:w-80" />
-          <Link
-            href="/carrello"
-            aria-label="Carrello"
-            className="relative flex size-11 items-center justify-center rounded-full text-ink hover:bg-paper-tint"
-          >
-            <ShoppingBag className="size-5" aria-hidden="true" />
-            <CartBadge />
-          </Link>
           <MobileMenu links={mainNav} />
         </div>
       </div>

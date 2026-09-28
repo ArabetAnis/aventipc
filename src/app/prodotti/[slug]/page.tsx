@@ -1,21 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Check, Truck, RotateCcw, ShieldCheck } from "lucide-react";
+import { Check, Camera, MessageCircle } from "lucide-react";
 import { products, getProductBySlug, getRelatedProducts } from "@/data/products";
 import { brands } from "@/content/brands";
-import { categories } from "@/content/categories";
-import { site } from "@/content/site";
 import { pageMetadata, productJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { Price } from "@/components/ui/Price";
+import { Badge } from "@/components/ui/Badge";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductGallery } from "@/components/product/ProductGallery";
-import { Rating } from "@/components/product/Rating";
 import { SpecTable } from "@/components/product/SpecTable";
-import { AddToCartButton } from "@/components/product/AddToCartButton";
+import { MarketplaceButtons } from "@/components/product/MarketplaceButtons";
 import { ProductGrid } from "@/components/product/ProductGrid";
 
 export const dynamicParams = false;
@@ -28,19 +26,17 @@ export async function generateMetadata({ params }: PageProps<"/prodotti/[slug]">
   const { slug } = await params;
   const product = getProductBySlug(slug);
   if (!product) return {};
-  const brand = brands.find((b) => b.slug === product.brand);
-  const title = `${product.name} — prezzo e scheda tecnica`;
-  const description = product.shortDescription;
-  return {
-    ...pageMetadata({ title, description, path: `/prodotti/${product.slug}` }),
-    title: brand && !product.name.startsWith(brand.name) ? `${brand.name} ${product.name} — prezzo e scheda tecnica` : title,
-  };
+  return pageMetadata({
+    title: `${product.name} usato`,
+    description: product.shortDescription,
+    path: `/prodotti/${product.slug}`,
+  });
 }
 
 const availabilityText = {
-  in_stock: "Disponibile, spedizione in 24–48 ore",
-  preorder: "In preordine, spedizione alla data di uscita",
-  out_of_stock: "Non disponibile al momento",
+  in_stock: "Disponibile",
+  preorder: "In arrivo",
+  out_of_stock: "Venduto",
 } as const;
 
 export default async function ProductPage({ params }: PageProps<"/prodotti/[slug]">) {
@@ -48,16 +44,13 @@ export default async function ProductPage({ params }: PageProps<"/prodotti/[slug
   const product = getProductBySlug(slug);
   if (!product) notFound();
 
-  const brand = brands.find((b) => b.slug === product.brand);
-  const category = categories.find((c) => c.slug === product.category);
-  const brandName = brand?.name ?? product.brand;
-  const categoryName = category?.name ?? product.category;
+  const brandName = brands.find((b) => b.slug === product.brand)?.name ?? product.brand;
   const brandNames = Object.fromEntries(brands.map((b) => [b.slug, b.name]));
-  const related = getRelatedProducts(product, 4);
+  const related = getRelatedProducts(product);
 
   const crumbs = [
     { name: "Home", href: "/" },
-    { name: categoryName, href: `/categorie/${product.category}` },
+    { name: "Prodotti", href: "/prodotti" },
     { name: product.name, href: `/prodotti/${product.slug}` },
   ];
 
@@ -71,36 +64,36 @@ export default async function ProductPage({ params }: PageProps<"/prodotti/[slug
         <ProductGallery images={product.images} productName={product.name} />
 
         <div>
-          <Link href={`/marchi/${product.brand}`} className="text-sm font-semibold text-ink-muted hover:text-ink">
-            {brandName}
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href={`/marchi/${product.brand}`} className="text-sm font-semibold text-ink-muted hover:text-ink">
+              {brandName}
+            </Link>
+            {product.condition === "used" ? <Badge tone="brand">Usato</Badge> : null}
+          </div>
           <h1 className="mt-2 text-title md:text-display">{product.name}</h1>
-          {product.rating ? (
-            <div className="mt-3">
-              <Rating value={product.rating.value} count={product.rating.count} />
-            </div>
-          ) : null}
           <p className="mt-4 max-w-[60ch] text-lead text-ink-soft">{product.shortDescription}</p>
 
           <div className="mt-8 rounded-tile border border-line bg-white p-6">
             <Price price={product.price} compareAtPrice={product.compareAtPrice} size="lg" />
-            <p className="mt-1 text-sm text-ink-muted">IVA inclusa · Codice {product.sku}</p>
-            <p className={`mt-4 flex items-center gap-2 text-sm font-semibold ${product.availability === "out_of_stock" ? "text-danger" : "text-success"}`}>
+            <p className={`mt-3 flex items-center gap-2 text-sm font-semibold ${product.availability === "out_of_stock" ? "text-danger" : "text-success"}`}>
               <span aria-hidden="true" className="size-2 rounded-full bg-current" />
               {availabilityText[product.availability]}
             </p>
             <div className="mt-5">
-              <AddToCartButton slug={product.slug} disabled={product.availability === "out_of_stock"} />
+              <MarketplaceButtons product={product} />
             </div>
             <ul className="mt-6 grid gap-2.5 border-t border-line pt-5 text-sm text-ink-soft">
               <li className="flex items-center gap-2.5">
-                <Truck aria-hidden="true" className="size-4 text-aventi-blue" /> Spedizione gratuita in tutta Italia
+                <Camera aria-hidden="true" className="size-4 text-aventi-blue" /> Le foto sono dell&apos;esemplare in vendita
               </li>
               <li className="flex items-center gap-2.5">
-                <RotateCcw aria-hidden="true" className="size-4 text-aventi-blue" /> Reso gratuito entro {site.returnDays} giorni
-              </li>
-              <li className="flex items-center gap-2.5">
-                <ShieldCheck aria-hidden="true" className="size-4 text-aventi-blue" /> Garanzia ufficiale {site.warrantyYears} anni
+                <MessageCircle aria-hidden="true" className="size-4 text-aventi-blue" />
+                <span>
+                  Domande o altre foto?{" "}
+                  <Link href="/contatti" className="font-semibold text-aventi-blue hover:underline">
+                    Scrivici
+                  </Link>
+                </span>
               </li>
             </ul>
           </div>
@@ -137,12 +130,12 @@ export default async function ProductPage({ params }: PageProps<"/prodotti/[slug
 
       {related.length > 0 ? (
         <Container as="section" aria-labelledby="correlati" className="mt-20 lg:mt-28">
-          <SectionHeading id="correlati" title="Potrebbero interessarti" link={{ label: `Tutti i ${categoryName.toLowerCase()}`, href: `/categorie/${product.category}` }} />
+          <SectionHeading id="correlati" title="Altri computer in vendita" link={{ label: "Tutti i prodotti", href: "/prodotti" }} />
           <ProductGrid products={related} brandNames={brandNames} />
         </Container>
       ) : null}
 
-      <JsonLd data={[productJsonLd(product, brandName, categoryName), breadcrumbJsonLd(crumbs)]} />
+      <JsonLd data={[productJsonLd(product, brandName), breadcrumbJsonLd(crumbs)]} />
     </>
   );
 }

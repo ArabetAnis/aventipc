@@ -16,7 +16,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
 
   return (
     <div>
-      <div className="relative aspect-[4/3] overflow-hidden rounded-tile border border-line bg-white">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-tile border border-line bg-paper-tint">
         <Image
           key={active.src}
           src={active.src}
@@ -24,7 +24,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           fill
           priority={index === 0}
           sizes="(min-width: 1024px) 640px, 100vw"
-          className="object-contain p-8 md:p-12"
+          className="object-contain"
         />
       </div>
       {images.length > 1 ? (
@@ -40,7 +40,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                   i === index ? "border-lilac" : "border-line hover:border-line-strong"
                 }`}
               >
-                <Image src={image.src} alt="" fill sizes="80px" className="object-contain p-2" />
+                <Image src={image.src} alt="" fill sizes="80px" className="object-cover" />
               </button>
             </li>
           ))}

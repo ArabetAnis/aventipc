@@ -70,7 +70,6 @@ export function organizationJsonLd() {
     "@type": "Organization",
     "@id": absoluteUrl("/#organization"),
     name: site.name,
-    legalName: site.legalName,
     url: site.url,
     logo: absoluteUrl("/brand/icon.svg"),
     email: site.email,
@@ -142,7 +141,13 @@ const availabilityMap = {
   out_of_stock: "https://schema.org/OutOfStock",
 } as const;
 
-export function productJsonLd(product: Product, brandName: string, categoryName: string) {
+const conditionMap = {
+  used: "https://schema.org/UsedCondition",
+  refurbished: "https://schema.org/RefurbishedCondition",
+  new: "https://schema.org/NewCondition",
+} as const;
+
+export function productJsonLd(product: Product, brandName: string) {
   const url = absoluteUrl(`/prodotti/${product.slug}`);
   return {
     "@context": "https://schema.org",
@@ -153,47 +158,17 @@ export function productJsonLd(product: Product, brandName: string, categoryName:
     sku: product.sku,
     ...(product.gtin ? { gtin13: product.gtin } : {}),
     brand: { "@type": "Brand", name: brandName },
-    category: categoryName,
+    category: product.kind,
     image: product.images.map((img) => absoluteUrl(img.src)),
     url,
-    ...(product.rating
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: product.rating.value,
-            reviewCount: product.rating.count,
-            bestRating: 5,
-            worstRating: 1,
-          },
-        }
-      : {}),
     offers: {
       "@type": "Offer",
       url,
       priceCurrency: "EUR",
       price: priceToDecimal(product.price),
-      priceValidUntil: "2026-12-31",
       availability: availabilityMap[product.availability],
-      itemCondition: "https://schema.org/NewCondition",
+      itemCondition: conditionMap[product.condition],
       seller: { "@id": absoluteUrl("/#organization") },
-      shippingDetails: {
-        "@type": "OfferShippingDetails",
-        shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "EUR" },
-        shippingDestination: { "@type": "DefinedRegion", addressCountry: "IT" },
-        deliveryTime: {
-          "@type": "ShippingDeliveryTime",
-          handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 1, unitCode: "DAY" },
-          transitTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 2, unitCode: "DAY" },
-        },
-      },
-      hasMerchantReturnPolicy: {
-        "@type": "MerchantReturnPolicy",
-        applicableCountry: "IT",
-        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
-        merchantReturnDays: site.returnDays,
-        returnMethod: "https://schema.org/ReturnByMail",
-        returnFees: "https://schema.org/FreeReturn",
-      },
     },
   };
 }

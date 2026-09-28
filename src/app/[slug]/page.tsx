@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import { staticPages } from "@/content/pages";
 import { site } from "@/content/site";
-import { lifestyleImages } from "@/data/lifestyle";
 import { pageMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Container } from "@/components/ui/Container";
@@ -34,7 +32,6 @@ export default async function StaticPage({ params }: PageProps<"/[slug]">) {
     { name: page.title, href: `/${page.slug}` },
   ];
   const isContact = page.slug === "contatti";
-  const isAbout = page.slug === "chi-siamo";
   const isLegal = page.slug === "privacy" || page.slug === "termini";
 
   return (
@@ -45,12 +42,6 @@ export default async function StaticPage({ params }: PageProps<"/[slug]">) {
       <Container as="article" className="mt-8">
         <h1 className="text-display md:text-hero">{page.title}</h1>
         <p className="mt-5 max-w-[60ch] text-lead text-ink-soft">{page.intro}</p>
-
-        {isAbout ? (
-          <div className="relative mt-10 aspect-[21/9] overflow-hidden rounded-tile border border-line bg-paper-tint">
-            <Image src={lifestyleImages.about.src} alt={lifestyleImages.about.alt} fill priority sizes="(min-width: 1280px) 1216px, 100vw" className="object-cover" />
-          </div>
-        ) : null}
 
         <div className={`mt-12 grid gap-12 ${isContact ? "lg:grid-cols-[1fr_1fr]" : ""}`}>
           {isContact ? (

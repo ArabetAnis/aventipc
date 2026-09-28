@@ -10,7 +10,7 @@ interface ProductGridProps {
 
 export function ProductGrid({ products, brandNames, priorityCount = 0 }: ProductGridProps) {
   return (
-    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <ul className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {products.map((product, index) => (
         <li key={product.slug} className="relative">
           <ProductCard product={product} brandName={brandNames[product.brand] ?? product.brand} priority={index < priorityCount} />
