@@ -1,63 +1,31 @@
 /** Home page copy. Product data comes from the catalogue; this file is text only. */
 
-export type ReassuranceIcon = "truck" | "shield" | "lock" | "headset";
+export type ReassuranceIcon = "camera" | "check" | "bag" | "headset";
 
 export type Cta = { label: string; href: string };
 
 export interface HomeContent {
-  hero: {
-    title: string;
-    /** One sentence, ≤ 160 characters. */
-    subtitle: string;
-    primaryCta: Cta;
-    secondaryCta: Cta;
-  };
+  hero: { title: string; subtitle: string; primaryCta: Cta; secondaryCta: Cta };
   reassurance: { icon: ReassuranceIcon; title: string; text: string }[];
-  sections: {
-    categories: string;
-    featured: string;
-    why: string;
-    faq: string;
-  };
-  /** id of the FAQ section; the footer links to /#<faqAnchor>. */
-  faqAnchor: string;
+  sections: { featured: string; why: string; faq: string };
 }
 
 export const home: HomeContent = {
   hero: {
-    title: "Il computer giusto, consegnato in 48 ore.",
-    subtitle:
-      "Notebook, PC desktop, gaming e workstation scelti e collaudati a Milano, con spedizione gratuita in Italia e assistenza in italiano.",
-    primaryCta: { label: "Scopri il catalogo", href: "/prodotti" },
-    secondaryCta: { label: "PC gaming", href: "/categorie/gaming" },
+    title: "PC usati, descritti per quello che sono.",
+    subtitle: "Notebook e mini PC controllati uno per uno, con foto reali dell'esemplare in vendita. Li compri su eBay o Subito.",
+    primaryCta: { label: "Vedi i prodotti", href: "/prodotti" },
+    secondaryCta: { label: "Come acquistare", href: "/come-acquistare" },
   },
   reassurance: [
-    {
-      icon: "truck",
-      title: "Spedizione gratuita in Italia",
-      text: "Corriere espresso assicurato, consegna in 24–48 ore, nessun importo minimo.",
-    },
-    {
-      icon: "shield",
-      title: "Garanzia 2 anni",
-      text: "Garanzia legale di conformità di 24 mesi. Ritiro, riparazione e sostituzione a nostro carico.",
-    },
-    {
-      icon: "lock",
-      title: "Pagamenti sicuri",
-      text: "Carta, PayPal, bonifico o Klarna in 3 rate. Non conserviamo i dati della tua carta.",
-    },
-    {
-      icon: "headset",
-      title: "Assistenza in italiano",
-      text: "Ti risponde chi assembla e collauda i computer, dal lunedì al venerdì dalle 9 alle 18.",
-    },
+    { icon: "camera", title: "Foto reali", text: "Ogni annuncio mostra l'esemplare che ricevi, non immagini di catalogo." },
+    { icon: "check", title: "Controllati prima della vendita", text: "Accendiamo, proviamo e descriviamo ogni computer, compresi i difetti." },
+    { icon: "bag", title: "Acquisto su eBay o Subito", text: "Paghi e ricevi il computer con le protezioni della piattaforma che scegli." },
+    { icon: "headset", title: "Rispondiamo in italiano", text: "Scrivici per foto in più, dettagli tecnici o per vedere il computer di persona." },
   ],
   sections: {
-    categories: "Scegli per categoria",
-    featured: "In evidenza",
+    featured: "In vendita ora",
     why: "Perché comprare da AventiPC",
     faq: "Domande frequenti",
   },
-  faqAnchor: "domande-frequenti",
 };

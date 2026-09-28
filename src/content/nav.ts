@@ -1,35 +1,28 @@
 import { brands } from "@/content/brands";
-import { categories } from "@/content/categories";
 
 export type NavLink = { label: string; href: string };
 export type FooterNavGroup = { title: string; links: NavLink[] };
 
 /** Header navigation, in display order. */
 export const mainNav: NavLink[] = [
-  { label: "Notebook", href: "/categorie/notebook" },
-  { label: "PC desktop", href: "/categorie/desktop" },
-  { label: "PC gaming", href: "/categorie/gaming" },
-  { label: "Workstation", href: "/categorie/workstation" },
-  { label: "Mini PC", href: "/categorie/mini-pc" },
-  { label: "Tutti i prodotti", href: "/prodotti" },
+  { label: "Prodotti", href: "/prodotti" },
+  { label: "Come acquistare", href: "/come-acquistare" },
+  { label: "Chi siamo", href: "/chi-siamo" },
+  { label: "Contatti", href: "/contatti" },
 ];
 
 /** Footer sitemap, grouped by column. */
 export const footerNav: FooterNavGroup[] = [
   {
-    title: "Catalogo",
-    links: [
-      ...categories.map((c) => ({ label: c.name, href: `/categorie/${c.slug}` })),
-      ...brands.map((b) => ({ label: b.name, href: `/marchi/${b.slug}` })),
-      { label: "Tutti i prodotti", href: "/prodotti" },
-    ],
+    title: "Prodotti",
+    links: [{ label: "Tutti i prodotti", href: "/prodotti" }, ...brands.map((b) => ({ label: b.name, href: `/marchi/${b.slug}` }))],
   },
   {
-    title: "Assistenza",
+    title: "Informazioni",
     links: [
-      { label: "Spedizioni e resi", href: "/spedizioni-e-resi" },
-      { label: "Contatti", href: "/contatti" },
+      { label: "Come acquistare", href: "/come-acquistare" },
       { label: "Domande frequenti", href: "/#domande-frequenti" },
+      { label: "Contatti", href: "/contatti" },
     ],
   },
   {

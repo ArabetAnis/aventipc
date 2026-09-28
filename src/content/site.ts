@@ -1,14 +1,13 @@
-/** Site-wide identity and commercial promises. Import from "@/content/site". */
+/** Site-wide identity. Import from "@/content/site". */
 
 export const site = {
   name: "AventiPC",
-  legalName: "AventiPC S.r.l.",
+  legalName: "AventiPC",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.aventipc.it",
-  tagline:
-    "Notebook, PC desktop, gaming e workstation, consegnati in 48 ore in tutta Italia.",
+  tagline: "PC e notebook usati, fotografati e descritti per quello che sono.",
   /** Home page meta description, ≤ 160 characters. */
   description:
-    "AventiPC vende notebook, PC desktop, gaming e workstation con spedizione gratuita in Italia, garanzia 2 anni e assistenza in italiano da Milano.",
+    "AventiPC vende notebook e mini PC usati con foto reali e caratteristiche verificate. Acquisti in sicurezza su eBay o Subito.",
   email: "info@aventipc.it",
   phone: "+39 02 1234 5678",
   address: {
@@ -22,16 +21,9 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/aventipc",
     facebook: "https://www.facebook.com/aventipc",
-    linkedin: "https://www.linkedin.com/company/aventipc",
-    youtube: "https://www.youtube.com/@aventipc",
   },
   /** schema.org openingHours format. */
   openingHours: "Mo-Fr 09:00-18:00",
-  /** EUR cents. 0 means every order in Italy ships free. */
-  freeShippingThreshold: 0,
-  shippingDays: "24–48 ore",
-  returnDays: 14,
-  warrantyYears: 2,
 } as const;
 
 export type Site = typeof site;
