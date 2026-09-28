@@ -9,7 +9,7 @@ export type Availability = "in_stock" | "preorder" | "out_of_stock";
 export interface ProductImage {
   /** Path under /public, e.g. "/images/products/apple-macbook-air-13-m4-1.jpg" */
   src: string;
-  /** Descriptive Italian alt text, e.g. "MacBook Air 13 pollici M4 color mezzanotte, aperto, vista frontale" */
+  /** Descriptive Italian alt text, e.g. "Dell Latitude 14 Rugged 5414 aperto, vista frontale" */
   alt: string;
   width: number;
   height: number;
@@ -35,7 +35,7 @@ export interface Product {
   shortDescription: string;
   /** 2–3 paragraphs in Italian. Each array item is one paragraph. */
   description: string[];
-  /** EUR, integer cents, IVA inclusa. 1229.00 € → 122900 */
+  /** EUR, integer cents. 249.00 € → 24900 */
   price: number;
   /** Optional crossed-out price in cents. */
   compareAtPrice?: number;

@@ -47,7 +47,7 @@ export function SiteFooter() {
           <p>
             © {year} {site.legalName} · P.IVA {site.vat}
           </p>
-          <p>Prezzi in euro, IVA inclusa. Immagini dei prodotti a scopo illustrativo.</p>
+          <p>Prezzi in euro. Le foto sono degli esemplari in vendita.</p>
         </div>
       </div>
     </footer>

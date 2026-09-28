@@ -49,7 +49,7 @@ export default async function ProductOgImage({ params }: { params: Promise<{ slu
           <div style={{ fontSize: 26, color: "#5a5566" }}>{brand}</div>
           <div style={{ marginTop: 8, fontSize: 56, fontWeight: 700, color: "#15121d", lineHeight: 1.08 }}>{product?.name ?? "AventiPC"}</div>
           {product ? <div style={{ marginTop: 28, fontSize: 44, fontWeight: 700, color: "#15121d" }}>{formatPrice(product.price)}</div> : null}
-          <div style={{ marginTop: 10, fontSize: 22, color: "#5a5566" }}>IVA inclusa · spedizione gratuita in Italia</div>
+          <div style={{ marginTop: 10, fontSize: 22, color: "#5a5566" }}>Usato · foto reali · acquisto su eBay o Subito</div>
           <div style={{ marginTop: 40, fontSize: 30, fontWeight: 700, color: "#3d7bf0" }}>AventiPC</div>
         </div>
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 14, display: "flex", backgroundImage: "linear-gradient(90deg,#3d7bf0,#7c7de8,#b48ce1,#d8a6dc,#ebc7d9,#f4e4df)" }} />

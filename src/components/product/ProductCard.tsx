@@ -30,12 +30,12 @@ export function ProductCard({ product, brandName, priority = false }: ProductCar
         ) : null}
         {discount !== null ? (
           <span className="absolute top-3 left-3">
-            <Badge tone="success">−{discount}%</Badge>
+            <Badge tone="overlay">−{discount}%</Badge>
           </span>
         ) : null}
         {product.condition === "used" ? (
           <span className="absolute top-3 right-3">
-            <Badge tone="brand">Usato</Badge>
+            <Badge tone="overlay">Usato</Badge>
           </span>
         ) : null}
       </Link>

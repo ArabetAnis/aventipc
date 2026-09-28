@@ -28,7 +28,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         />
       </div>
       {images.length > 1 ? (
-        <ul className="mt-4 flex gap-3" aria-label={`Immagini di ${productName}`}>
+        <ul className="mt-4 grid grid-cols-5 gap-2 sm:gap-3" aria-label={`Immagini di ${productName}`}>
           {images.map((image, i) => (
             <li key={image.src}>
               <button
@@ -36,11 +36,11 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
                 onClick={() => setIndex(i)}
                 aria-pressed={i === index}
                 aria-label={`Mostra immagine ${i + 1} di ${images.length}`}
-                className={`relative block size-20 overflow-hidden rounded-card border bg-white transition-colors ${
+                className={`relative block aspect-square w-full overflow-hidden rounded-card border bg-white transition-colors ${
                   i === index ? "border-lilac" : "border-line hover:border-line-strong"
                 }`}
               >
-                <Image src={image.src} alt="" fill sizes="80px" className="object-cover" />
+                <Image src={image.src} alt="" fill sizes="(min-width: 640px) 96px, 20vw" className="object-cover" />
               </button>
             </li>
           ))}

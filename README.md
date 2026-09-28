@@ -1,6 +1,6 @@
 # AventiPC
 
-Sito ecommerce dimostrativo per la vendita di notebook, PC desktop, gaming e workstation in Italia. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
+Piccolo negozio di PC e notebook usati: il sito mostra foto reali e caratteristiche, l'acquisto avviene su eBay o Subito. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
 
 Demo online (export statico su GitHub Pages): https://arabetanis.github.io/aventipc/
 
@@ -17,15 +17,12 @@ Imposta `NEXT_PUBLIC_SITE_URL` (default `https://www.aventipc.it`) per canonical
 
 ## Struttura
 
-- `src/app` — route: home, `/prodotti` (catalogo con filtri), `/prodotti/[slug]`, `/categorie/[slug]`, `/marchi/[slug]`, `/carrello`, `/checkout`, pagine informative `/[slug]`, `sitemap.ts`, `robots.ts`, `manifest.ts`, immagini Open Graph.
-- `src/data/products.ts` — catalogo tipizzato (17 prodotti) e helper di ricerca.
-- `src/content/*` — testi in italiano: categorie, marchi, FAQ, pagine legali, navigazione.
-- `src/lib/seo.ts` — metadata standard e JSON-LD (Organization, WebSite, Product, BreadcrumbList, ItemList, CollectionPage, FAQPage).
-- `src/store/cart.ts` — carrello lato client (zustand + localStorage).
-- `docs/superpowers/specs/2026-09-22-aventipc-design.md` — design system e regole SEO.
+- `src/data/products.ts` — i computer in vendita. Prezzi da confermare. Per collegare i pulsanti di acquisto compila `marketplaces: { ebay: "https://…", subito: "https://…" }` sul prodotto.
+- `public/images/products/` — foto reali degli esemplari (`<slug>-1.jpg`, `-2.jpg`, …).
+- `src/content/*` — testi in italiano: home, FAQ, marchi, pagine (chi siamo, come acquistare, contatti, privacy, termini).
+- `src/lib/seo.ts` — metadata e JSON-LD (Product con condizione "usato", BreadcrumbList, FAQPage, Organization, WebSite).
+- Versione precedente con catalogo dimostrativo, carrello e checkout: tag `v1-demo-catalogo` e branch `demo-catalogo-completo`.
 
 ## Note
 
-- Le immagini prodotto sono segnaposto scaricati da siti dei produttori e Unsplash (fonte registrata in `products.ts`); da sostituire con foto proprie prima della pubblicazione.
-- Il checkout è dimostrativo: nessun provider di pagamento collegato, il numero d'ordine è generato localmente.
-- P.IVA, indirizzo e recapiti in `src/content/site.ts` sono segnaposto.
+- P.IVA, indirizzo e telefono in `src/content/site.ts` sono segnaposto.

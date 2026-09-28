@@ -1,9 +1,11 @@
-type Tone = "neutral" | "success" | "brand";
+type Tone = "neutral" | "success" | "brand" | "overlay";
 
 const tones: Record<Tone, string> = {
   neutral: "bg-paper-tint text-ink-soft",
   success: "bg-success/10 text-success",
   brand: "bg-lilac/15 text-ink",
+  /** Readable on top of photos. */
+  overlay: "bg-white/90 text-ink shadow-sm backdrop-blur-sm",
 };
 
 export function Badge({ tone = "neutral", children }: { tone?: Tone; children: React.ReactNode }) {

@@ -22,7 +22,7 @@ export function SearchForm({ defaultValue = "", className = "", size = "sm" }: S
         type="search"
         name="q"
         defaultValue={defaultValue}
-        placeholder="Cerca MacBook, RTX 5080, ThinkPad…"
+        placeholder="Cerca ThinkBook, Latitude, i5…"
         autoComplete="off"
         className={`${height} w-full rounded-full border border-line bg-white pr-4 pl-10 text-ink placeholder:text-ink-muted focus:border-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-aventi-blue/40`}
       />
