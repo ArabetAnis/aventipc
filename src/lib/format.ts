@@ -1,33 +1,24 @@
-const eur = new Intl.NumberFormat("it-IT", {
-  style: "currency",
-  currency: "EUR",
-  minimumFractionDigits: 2,
-});
+import { localeMeta, type Locale } from "@/i18n/config";
 
-/** Formats integer cents as an Italian euro string, e.g. 122900 → "1.229,00 €". */
-export function formatPrice(cents: number): string {
-  return eur.format(cents / 100);
+const priceFormats = new Map<Locale, Intl.NumberFormat>();
+
+/** Formats integer cents as a euro price for the locale, e.g. 19900 → "199,00 €" (it) or "€ 199,00" (nl). */
+export function formatPrice(cents: number, locale: Locale): string {
+  let f = priceFormats.get(locale);
+  if (!f) {
+    f = new Intl.NumberFormat(localeMeta[locale].intl, { style: "currency", currency: "EUR", minimumFractionDigits: 2 });
+    priceFormats.set(locale, f);
+  }
+  return f.format(cents / 100);
 }
 
-/** Cents → decimal string for schema.org offers, e.g. 122900 → "1229.00". */
+/** Cents → decimal string for schema.org offers, e.g. 19900 → "199.00". */
 export function priceToDecimal(cents: number): string {
   return (cents / 100).toFixed(2);
 }
 
-export function discountPercent(price: number, compareAtPrice?: number): number | null {
-  if (!compareAtPrice || compareAtPrice <= price) return null;
-  return Math.round((1 - price / compareAtPrice) * 100);
-}
-
-/** Removes accents and lowercases for search matching. */
-export function normalize(text: string): string {
-  return text
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .trim();
-}
-
-export function pluralize(count: number, singular: string, plural: string): string {
-  return count === 1 ? singular : plural;
+/** "A, B e C" in the locale's grammar. */
+export function joinList(items: string[], locale: Locale): string {
+  if (items.length === 0) return "";
+  return new Intl.ListFormat(localeMeta[locale].intl, { style: "long", type: "conjunction" }).format(items);
 }

@@ -1,11 +1,14 @@
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import type { BreadcrumbItem } from "@/lib/seo";
+export interface BreadcrumbItem {
+  name: string;
+  href: string;
+}
 
 /** Visible breadcrumb trail. Pair it with breadcrumbJsonLd() for structured data. */
-export function Breadcrumbs({ items, className = "" }: { items: BreadcrumbItem[]; className?: string }) {
+export function Breadcrumbs({ items, label, className = "" }: { items: BreadcrumbItem[]; label: string; className?: string }) {
   return (
-    <nav aria-label="Percorso" className={`text-sm text-ink-soft ${className}`}>
+    <nav aria-label={label} className={`text-sm text-ink-soft ${className}`}>
       <ol className="flex flex-wrap items-center gap-1">
         {items.map((item, index) => {
           const last = index === items.length - 1;

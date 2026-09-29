@@ -1,94 +1,93 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
-import type { Product, FaqItem } from "@/types/catalog";
+import { localeMeta, type Locale } from "@/i18n/config";
+import { alternatesFor, xDefaultFor, type RouteKey } from "@/i18n/routes";
+import type { Product } from "@/data/products";
+import type { FaqItem } from "@/types/catalog";
 import { priceToDecimal } from "@/lib/format";
 
 export const SITE_NAME = site.name;
 
-/** The static export uses trailing-slash URLs (/prodotti/), so every page link we publish must match. */
-const TRAILING_SLASH = process.env.NEXT_PUBLIC_STATIC_EXPORT === "1";
-
 /**
- * Builds an absolute URL on the canonical domain. In the static export, page paths get a
- * trailing slash so sitemap and JSON-LD URLs match the canonical tag; file paths
- * (anything with an extension, e.g. /images/x.jpg) are left alone.
+ * Absolute URL on the canonical domain. Page paths always end with "/" (the site uses
+ * trailing slashes everywhere); file paths such as /images/x.jpg are left alone.
  */
 export function absoluteUrl(path = "/"): string {
   let p = path;
-  if (TRAILING_SLASH) {
-    const cut = p.search(/[?#]/);
-    const base = cut === -1 ? p : p.slice(0, cut);
-    const rest = cut === -1 ? "" : p.slice(cut);
-    if (!base.endsWith("/") && !/\.[a-z0-9]+$/i.test(base)) p = `${base}/${rest}`;
-  }
+  const cut = p.search(/[?#]/);
+  const base = cut === -1 ? p : p.slice(0, cut);
+  const rest = cut === -1 ? "" : p.slice(cut);
+  if (!base.endsWith("/") && !/\.[a-z0-9]+$/i.test(base)) p = `${base}/${rest}`;
   return new URL(p, site.url).toString();
 }
 
-interface PageMetadataInput {
-  title: string;
-  description: string;
-  /** Path starting with "/" — used for the canonical URL and OG url. */
+/** hreflang map for a route: every language version plus x-default when there is one. */
+export function languageAlternates(key: RouteKey): Record<string, string> {
+  const map: Record<string, string> = {};
+  for (const alt of alternatesFor(key)) map[alt.hreflang] = absoluteUrl(alt.path);
+  const xDefault = xDefaultFor(key);
+  if (xDefault) map["x-default"] = absoluteUrl(xDefault);
+  return map;
+}
+
+/** Open Graph image generated at build time by app/og/[file]/route.tsx. */
+export function ogImagePath(locale: Locale, productSlug?: string): string {
+  return productSlug ? `/og/${locale}-${productSlug}.png` : `/og/${locale}.png`;
+}
+
+interface PageMetaInput {
+  locale: Locale;
+  key: RouteKey;
   path: string;
-  /** Absolute or root-relative image for OG/Twitter. Defaults to the route's opengraph-image. */
-  image?: { url: string; width?: number; height?: number; alt?: string };
-  noindex?: boolean;
+  /** Title without the " | AventiPC" suffix (added by the layout template) unless absoluteTitle is set. */
+  title: string;
+  absoluteTitle?: boolean;
+  description: string;
+  image?: { path: string; alt: string };
   type?: "website" | "article";
 }
 
-/**
- * Standard metadata for a page: canonical, Open Graph (it_IT), Twitter card and robots.
- * Titles get the "%s | AventiPC" template from the root layout, so pass the bare title.
- */
-export function pageMetadata(input: PageMetadataInput): Metadata {
+/** Canonical, hreflang, Open Graph and Twitter tags for one page. */
+export function pageMetadata(input: PageMetaInput): Metadata {
   const url = absoluteUrl(input.path);
-  const images = input.image
-    ? [
-        {
-          url: input.image.url,
-          width: input.image.width,
-          height: input.image.height,
-          alt: input.image.alt ?? input.title,
-        },
-      ]
-    : undefined;
+  const image = input.image ?? { path: ogImagePath(input.locale), alt: input.title };
+  const images = [{ url: absoluteUrl(image.path), width: 1200, height: 630, alt: image.alt }];
+  const otherLocales = alternatesFor(input.key)
+    .filter((a) => a.locale !== input.locale)
+    .map((a) => localeMeta[a.locale].ogLocale);
+  const fullTitle = input.absoluteTitle ? input.title : `${input.title} | ${SITE_NAME}`;
   return {
-    title: input.title,
+    title: input.absoluteTitle ? { absolute: input.title } : input.title,
     description: input.description,
-    alternates: { canonical: url },
+    alternates: { canonical: url, languages: languageAlternates(input.key) },
     openGraph: {
-      title: input.title,
-      description: input.description,
+      type: input.type ?? "website",
       url,
       siteName: SITE_NAME,
-      locale: "it_IT",
-      type: input.type ?? "website",
+      locale: localeMeta[input.locale].ogLocale,
+      alternateLocale: [...new Set(otherLocales)],
+      title: fullTitle,
+      description: input.description,
       images,
     },
-    twitter: {
-      card: "summary_large_image",
-      title: input.title,
-      description: input.description,
-      images: images?.map((i) => i.url),
-    },
-    robots: input.noindex
-      ? { index: false, follow: false, nocache: true }
-      : { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
+    twitter: { card: "summary_large_image", title: fullTitle, description: input.description, images: images.map((i) => i.url) },
+    robots: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
   };
 }
 
-/* ---------- JSON-LD builders (schema.org) ---------- */
+/* ---------- JSON-LD (schema.org) ---------- */
 
-export function organizationJsonLd() {
+export function organizationJsonLd(tagline: string) {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": absoluteUrl("/#organization"),
     name: site.name,
-    url: site.url,
-    logo: absoluteUrl("/brand/icon.svg"),
+    url: absoluteUrl("/"),
+    logo: absoluteUrl("/brand/icon-512.png"),
+    description: tagline,
     email: site.email,
     telephone: site.phone,
-    vatID: site.vat,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
@@ -97,46 +96,24 @@ export function organizationJsonLd() {
       addressRegion: site.address.region,
       addressCountry: site.address.country,
     },
-    contactPoint: [
-      {
-        "@type": "ContactPoint",
-        contactType: "customer service",
-        telephone: site.phone,
-        email: site.email,
-        availableLanguage: ["Italian"],
-        areaServed: "IT",
-      },
-    ],
+    areaServed: ["Italy", "France", "Belgium", "Spain", "Germany"].map((name) => ({ "@type": "Country", name })),
     sameAs: Object.values(site.social),
   };
 }
 
-export function websiteJsonLd() {
+export function websiteJsonLd(locale: Locale) {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": absoluteUrl("/#website"),
     name: site.name,
-    url: site.url,
-    inLanguage: "it-IT",
+    url: absoluteUrl("/"),
+    inLanguage: localeMeta[locale].intl,
     publisher: { "@id": absoluteUrl("/#organization") },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: absoluteUrl("/prodotti?q={search_term_string}"),
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
-export interface BreadcrumbItem {
-  name: string;
-  href: string;
-}
-
-export function breadcrumbJsonLd(items: BreadcrumbItem[]) {
+export function breadcrumbJsonLd(items: { name: string; href: string }[]) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -152,7 +129,7 @@ export function breadcrumbJsonLd(items: BreadcrumbItem[]) {
 const availabilityMap = {
   in_stock: "https://schema.org/InStock",
   preorder: "https://schema.org/PreOrder",
-  out_of_stock: "https://schema.org/OutOfStock",
+  out_of_stock: "https://schema.org/SoldOut",
 } as const;
 
 const conditionMap = {
@@ -161,56 +138,85 @@ const conditionMap = {
   new: "https://schema.org/NewCondition",
 } as const;
 
-export function productJsonLd(product: Product, brandName: string) {
-  const url = absoluteUrl(`/prodotti/${product.slug}`);
+/** Product + Offer. Products without a price get no Offer (Google rejects offers without price). */
+export function productJsonLd(input: {
+  product: Product;
+  brandName: string;
+  path: string;
+  locale: Locale;
+  description: string;
+  kind: string;
+}) {
+  const { product } = input;
+  const url = absoluteUrl(input.path);
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     "@id": `${url}#product`,
     name: product.name,
-    description: product.shortDescription,
+    description: input.description,
     sku: product.sku,
-    ...(product.gtin ? { gtin13: product.gtin } : {}),
-    brand: { "@type": "Brand", name: brandName },
-    category: product.kind,
+    brand: { "@type": "Brand", name: input.brandName },
+    category: input.kind,
+    itemCondition: conditionMap[product.condition],
     image: product.images.map((img) => absoluteUrl(img.src)),
     url,
-    offers: {
-      "@type": "Offer",
-      url,
-      priceCurrency: "EUR",
-      price: priceToDecimal(product.price),
-      availability: availabilityMap[product.availability],
-      itemCondition: conditionMap[product.condition],
-      seller: { "@id": absoluteUrl("/#organization") },
-    },
+    inLanguage: localeMeta[input.locale].intl,
+    ...(product.price !== null
+      ? {
+          offers: {
+            "@type": "Offer",
+            url: product.vinted ?? url,
+            priceCurrency: "EUR",
+            price: priceToDecimal(product.price),
+            availability: availabilityMap[product.availability],
+            itemCondition: conditionMap[product.condition],
+            seller: { "@id": absoluteUrl("/#organization") },
+          },
+        }
+      : {}),
   };
 }
 
-export function itemListJsonLd(products: Product[], listName: string) {
+export function itemListJsonLd(entries: { name: string; path: string }[], listName: string) {
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: listName,
-    numberOfItems: products.length,
-    itemListElement: products.map((p, index) => ({
+    numberOfItems: entries.length,
+    itemListElement: entries.map((e, index) => ({
       "@type": "ListItem",
       position: index + 1,
-      url: absoluteUrl(`/prodotti/${p.slug}`),
-      name: p.name,
+      url: absoluteUrl(e.path),
+      name: e.name,
     })),
   };
 }
 
-export function collectionPageJsonLd(input: { name: string; description: string; path: string }) {
+export function collectionPageJsonLd(input: {
+  name: string;
+  description: string;
+  path: string;
+  locale: Locale;
+  city?: { name: string; country: string };
+}) {
   return {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: input.name,
     description: input.description,
     url: absoluteUrl(input.path),
-    inLanguage: "it-IT",
+    inLanguage: localeMeta[input.locale].intl,
     isPartOf: { "@id": absoluteUrl("/#website") },
+    ...(input.city
+      ? {
+          spatialCoverage: {
+            "@type": "City",
+            name: input.city.name,
+            containedInPlace: { "@type": "Country", name: input.city.country },
+          },
+        }
+      : {}),
   };
 }
 

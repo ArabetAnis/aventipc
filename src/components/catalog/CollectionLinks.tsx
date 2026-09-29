@@ -2,13 +2,14 @@ import Link from "next/link";
 
 interface CollectionLinksProps {
   title: string;
+  id?: string;
   items: { name: string; tagline: string; href: string }[];
 }
 
-export function CollectionLinks({ title, items }: CollectionLinksProps) {
+export function CollectionLinks({ title, items, id = "altre" }: CollectionLinksProps) {
   return (
-    <section aria-labelledby="altre">
-      <h2 id="altre" className="text-heading">
+    <section aria-labelledby={id}>
+      <h2 id={id} className="text-heading">
         {title}
       </h2>
       <ul className="mt-5 divide-y divide-line border-y border-line">

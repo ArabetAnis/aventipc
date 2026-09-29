@@ -75,7 +75,7 @@ export const segments: Record<Locale, Segments> = {
   de: {
     products: "produkte",
     brands: "marken",
-    pages: { about: "ueber-uns", howToBuy: "so-kaufen-sie", contact: "kontakt", privacy: "datenschutz", terms: "agb" },
+    pages: { about: "ueber-uns", howToBuy: "so-kaufen-sie", contact: "kontakt", privacy: "datenschutz", terms: "nutzungsbedingungen" },
     themes: { used: "gebrauchte-laptops", cheap: "guenstige-laptops", students: "laptops-fuer-studenten" },
   },
   nl: {

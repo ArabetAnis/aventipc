@@ -1,30 +1,26 @@
-import { formatPrice, discountPercent } from "@/lib/format";
+import type { Locale } from "@/i18n/config";
+import { formatPrice } from "@/lib/format";
 
 interface PriceProps {
-  price: number;
-  compareAtPrice?: number;
+  price: number | null;
+  locale: Locale;
+  onRequestLabel: string;
   size?: "sm" | "md" | "lg";
   className?: string;
 }
 
 const sizes = {
-  sm: { main: "text-base font-bold", old: "text-xs" },
-  md: { main: "text-lg font-bold", old: "text-sm" },
-  lg: { main: "font-display text-title font-semibold", old: "text-base" },
+  sm: "text-base font-bold",
+  md: "text-lg font-bold",
+  lg: "font-display text-title font-semibold",
 };
 
-/** Euro price with optional crossed-out compare-at price and discount. */
-export function Price({ price, compareAtPrice, size = "md", className = "" }: PriceProps) {
-  const discount = discountPercent(price, compareAtPrice);
+export function Price({ price, locale, onRequestLabel, size = "md", className = "" }: PriceProps) {
   return (
-    <p className={`tabular flex flex-wrap items-baseline gap-x-2 ${className}`}>
-      <span className={sizes[size].main}>{formatPrice(price)}</span>
-      {discount !== null && compareAtPrice ? (
-        <>
-          <s className={`${sizes[size].old} text-ink-muted`}>{formatPrice(compareAtPrice)}</s>
-          <span className={`${sizes[size].old} font-semibold text-success`}>−{discount}%</span>
-        </>
-      ) : null}
+    <p className={`tabular ${className}`}>
+      <span className={price === null ? "text-base font-semibold text-ink-soft" : sizes[size]}>
+        {price === null ? onRequestLabel : formatPrice(price, locale)}
+      </span>
     </p>
   );
 }
