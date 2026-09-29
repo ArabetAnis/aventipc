@@ -1,6 +1,6 @@
 # AventiPC
 
-Piccolo negozio di PC e notebook usati: il sito mostra foto reali e caratteristiche, l'acquisto avviene su eBay o Subito. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
+Piccolo negozio di PC e notebook usati: il sito mostra foto reali e caratteristiche, l'acquisto avviene su Vinted. Disponibile in italiano, francese, spagnolo, tedesco e olandese. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
 
 Demo online (export statico su GitHub Pages): https://arabetanis.github.io/aventipc/
 
