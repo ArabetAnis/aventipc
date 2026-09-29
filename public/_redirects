@@ -1,0 +1,13 @@
+# Cloudflare Pages redirects (ignored by other hosts). Old single-language URLs → Italian pages.
+/prodotti/*            /it/prodotti/:splat          301
+/marchi/*              /it/marchi/:splat            301
+/chi-siamo             /it/chi-siamo/               301
+/chi-siamo/            /it/chi-siamo/               301
+/come-acquistare       /it/come-acquistare/         301
+/come-acquistare/      /it/come-acquistare/         301
+/contatti              /it/contatti/                301
+/contatti/             /it/contatti/                301
+/privacy               /it/privacy/                 301
+/privacy/              /it/privacy/                 301
+/termini               /it/termini/                 301
+/termini/              /it/termini/                 301

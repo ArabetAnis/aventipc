@@ -1,4 +1,4 @@
-import type { ProductSpec } from "@/types/catalog";
+type ProductSpec = { label: string; value: string };
 
 export function SpecTable({ specs, caption }: { specs: ProductSpec[]; caption: string }) {
   return (

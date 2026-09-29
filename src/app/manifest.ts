@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { site } from "@/content/site";
-import { BASE_PATH } from "@/lib/catalog";
+
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const dynamic = "force-static";
 
@@ -8,7 +9,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: site.name,
     short_name: site.name,
-    description: site.description,
+    description: "PC e portatili usati come nuovi · Used PCs and laptops, like new",
     lang: "it",
     start_url: `${BASE_PATH}/`,
     display: "standalone",

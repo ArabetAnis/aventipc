@@ -15,7 +15,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  # GitHub Pages is only the temporary showcase. Its terms forbid hosting an online shop,
+  # so this workflow stops by itself as soon as the Cloudflare secrets exist.
+  check:
+    runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.cf.outputs.enabled }}
+    steps:
+      - id: cf
+        env:
+          TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: |
+          if [ -n "$TOKEN" ]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Cloudflare is configured: GitHub Pages deploy skipped. Unpublish Pages in the repo settings."
+          else
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
+    needs: check
+    if: needs.check.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
