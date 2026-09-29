@@ -445,7 +445,7 @@ const it: Dictionary = {
               "Sono in condizioni come nuove, quasi 100/100. Li testiamo prima della vendita e nella scheda indichiamo lo stato della batteria e ogni dettaglio.",
           },
         ],
-        otherCitiesTitle: () => "PC portatili usati in altre città",
+        otherCitiesTitle: () => "Anche in altre città",
         otherThemesTitle: (c) => `Altre ricerche a ${c.name}`,
       },
     },
@@ -480,7 +480,7 @@ const it: Dictionary = {
         guide: (c) => [
           "Molti portatili economici nuovi usano plastica sottile, dischi lenti e schermi poco luminosi. Un notebook professionale usato, a parità di prezzo, offre di solito un SSD, una tastiera migliore e una scocca più solida.",
           "Per spendere poco senza sbagliare scegli almeno 8 GB di RAM e un SSD, e verifica lo stato della batteria. Evita i dischi meccanici come unico disco: rallentano tutto il sistema.",
-          `I nostri portatili economici sono testati, descritti con precisione e mostrati con foto reali. Se sei a ${c.name} e vuoi un consiglio su quale scegliere, scrivici.`,
+          `Tutti i portatili che vendiamo sono testati, descritti con precisione e mostrati con foto reali. Se sei a ${c.name} e vuoi un consiglio su quale scegliere, scrivici.`,
         ],
         faqTitle: (c) => `Domande sui portatili economici a ${c.name}`,
         faq: (c) => [
@@ -500,7 +500,7 @@ const it: Dictionary = {
               "Sì, se è un modello professionale in buone condizioni. I nostri sono come nuovi, testati prima della vendita e descritti anche nei dettagli di batteria e schermo.",
           },
         ],
-        otherCitiesTitle: () => "Portatili economici in altre città",
+        otherCitiesTitle: () => "Anche in altre città",
         otherThemesTitle: (c) => `Altre ricerche a ${c.name}`,
       },
     },

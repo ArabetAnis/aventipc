@@ -336,7 +336,7 @@ const nl: Dictionary = {
     },
     contact: {
       title: "Contact",
-      metaTitle: "Contact",
+      metaTitle: "Contact opnemen",
       metaDescription:
         "Mail naar info@aventipc.com of bel +39 02 1234 5678 van maandag tot vrijdag, 9–18 uur, met vragen over de computers die te koop staan.",
       intro: "Voor vragen over een computer, extra foto's of een afspraak om hem te komen bekijken, kun je ons mailen of bellen.",

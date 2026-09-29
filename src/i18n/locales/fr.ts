@@ -337,7 +337,7 @@ const fr: Dictionary = {
     },
     contact: {
       title: "Contact",
-      metaTitle: "Contact",
+      metaTitle: "Nous contacter",
       metaDescription:
         "Écrivez à info@aventipc.com ou appelez le +39 02 1234 5678 du lundi au vendredi, de 9 h à 18 h, pour toute question sur les ordinateurs en vente.",
       intro: "Pour une question sur un ordinateur, d'autres photos ou un rendez-vous pour le voir en personne, vous pouvez nous écrire ou nous appeler.",
