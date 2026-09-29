@@ -29,6 +29,13 @@ Hosting, HTTPS and email forwarding are free. The deploy runs from GitHub Action
     then Settings → General → Change visibility → Private.
     (The GitHub Pages workflow already skips itself once the Cloudflare secrets exist.)
 
+## Home page language redirect
+
+`functions/index.ts` runs on Cloudflare for `/` only. It sends visitors to the language they chose before
+(cookie `aventipc_lang`, set when they click a language link) or to their browser language, with a 302.
+Visitors with no supported language, including search-engine crawlers, get the language chooser,
+which is the hreflang x-default page. The GitHub Pages showcase cannot run it and always shows the chooser.
+
 ## After going live
 
 - Google Search Console: add the domain property, submit `https://aventipc.com/sitemap.xml`.

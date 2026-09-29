@@ -30,7 +30,7 @@ export default function GlobalNotFound() {
           <ul className="mt-8 space-y-3">
             {locales.map((l) => (
               <li key={l} lang={l}>
-                <Link href={`/${l}/`} hrefLang={l} className="text-lead text-ink-soft hover:text-aventi-blue">
+                <Link href={`/${l}/`} hrefLang={l} data-lang-choice={l} className="text-lead text-ink-soft hover:text-aventi-blue">
                   {text[l]} <span className="font-semibold text-aventi-blue">{localeMeta[l].nativeName}</span>
                 </Link>
               </li>

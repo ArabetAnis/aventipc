@@ -87,6 +87,7 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
                   href={href(l, { kind: "home" })}
                   hrefLang={l}
                   lang={l}
+                  data-lang-choice={l}
                   className={l === locale ? "font-semibold text-white" : "text-white/60 hover:text-white"}
                 >
                   {localeMeta[l].nativeName} <span className="text-white/40">· {localeMeta[l].markets}</span>

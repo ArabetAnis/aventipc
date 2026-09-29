@@ -30,6 +30,7 @@ export function LanguageSwitcher({ links, label }: { links: LanguageLink[]; labe
               href={l.href}
               hrefLang={l.locale}
               lang={l.locale}
+              data-lang-choice={l.locale}
               aria-current={l.current ? "true" : undefined}
               className={`flex items-center justify-between px-4 py-2.5 text-sm hover:bg-paper-tint ${l.current ? "font-bold text-ink" : "text-ink-soft"}`}
             >

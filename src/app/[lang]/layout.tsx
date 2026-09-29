@@ -7,6 +7,7 @@ import { baseMetadata, baseViewport } from "@/lib/base-metadata";
 import { organizationJsonLd, websiteJsonLd } from "@/lib/seo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { GradientBackdrop } from "@/components/layout/GradientBackdrop";
+import { LanguagePreference } from "@/components/layout/LanguagePreference";
 
 export const metadata = baseMetadata;
 export const viewport = baseViewport;
@@ -32,6 +33,7 @@ export default async function LangLayout({ children, params }: LayoutProps<"/[la
         </a>
         <GradientBackdrop />
         {children}
+        <LanguagePreference />
         <JsonLd data={[organizationJsonLd(dict.meta.tagline), websiteJsonLd(lang)]} />
       </body>
     </html>

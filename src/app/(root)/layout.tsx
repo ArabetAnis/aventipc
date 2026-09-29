@@ -2,6 +2,7 @@ import "../globals.css";
 import { fontClasses } from "@/lib/fonts";
 import { baseMetadata, baseViewport } from "@/lib/base-metadata";
 import { GradientBackdrop } from "@/components/layout/GradientBackdrop";
+import { LanguagePreference } from "@/components/layout/LanguagePreference";
 
 export const metadata = baseMetadata;
 export const viewport = baseViewport;
@@ -13,6 +14,7 @@ export default function RootChooserLayout({ children }: LayoutProps<"/">) {
       <body className="relative flex min-h-full flex-col">
         <GradientBackdrop />
         {children}
+        <LanguagePreference />
       </body>
     </html>
   );

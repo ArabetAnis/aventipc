@@ -64,6 +64,7 @@ export function MobileMenu({ links, languages, labels }: MobileMenuProps) {
                     href={l.href}
                     hrefLang={l.locale}
                     lang={l.locale}
+                    data-lang-choice={l.locale}
                     aria-current={l.current ? "true" : undefined}
                     className={`inline-flex h-10 items-center rounded-full border px-4 text-sm font-semibold ${l.current ? "border-ink bg-ink text-white" : "border-line bg-white text-ink-soft"}`}
                   >

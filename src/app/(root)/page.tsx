@@ -51,6 +51,7 @@ export default function LanguageChooser() {
               hrefLang={l}
               lang={l}
               data-locale={l}
+              data-lang-choice={l}
               className="group flex h-full flex-col rounded-tile border border-line bg-white p-6 transition-colors hover:border-lilac data-[suggested=true]:border-aventi-blue"
             >
               <span className="font-display text-heading font-semibold text-ink group-hover:text-aventi-blue">{localeMeta[l].nativeName}</span>
