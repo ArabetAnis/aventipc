@@ -14,7 +14,7 @@ export function LanguagePreference() {
       const lang = link?.getAttribute("data-lang-choice");
       if (!lang) return;
       const secure = location.protocol === "https:" ? "; Secure" : "";
-      document.cookie = `aventipc_lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`;
+      document.cookie = `findbetter_lang=${lang}; Path=/; Max-Age=31536000; SameSite=Lax${secure}`;
     };
     document.addEventListener("click", onClick);
     return () => document.removeEventListener("click", onClick);

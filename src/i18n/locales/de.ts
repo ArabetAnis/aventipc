@@ -6,7 +6,7 @@ import type { Dictionary } from "../types";
  */
 const de: Dictionary = {
   meta: {
-    homeTitle: "AventiPC – gebrauchte Laptops und PCs wie neu, echte Fotos",
+    homeTitle: "FindBetter – gebrauchte Laptops und PCs wie neu, echte Fotos",
     homeDescription:
       "Gebrauchte PCs und Laptops wie neu: getestete Lenovo ThinkBook und Dell Latitude mit echten Fotos des Geräts. Sicher kaufen über Vinted mit Käuferschutz.",
     tagline: "Gebrauchte PCs und Laptops wie neu, fotografiert und so beschrieben, wie sie sind.",
@@ -16,7 +16,7 @@ const de: Dictionary = {
   countries: { IT: "Italien", FR: "Frankreich", BE: "Belgien", ES: "Spanien", DE: "Deutschland" },
   ui: {
     skipToContent: "Zum Inhalt springen",
-    homeAria: "AventiPC, zur Startseite",
+    homeAria: "FindBetter, zur Startseite",
     mainMenu: "Hauptmenü",
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
@@ -60,7 +60,7 @@ const de: Dictionary = {
       intro:
         "Gebrauchte Notebooks und Mini-PCs im Zustand wie neu, einzeln getestet und fotografiert. Jeden Computer kaufen Sie über Vinted mit Käuferschutz.",
       metaDescription:
-        "Alle gebrauchten PCs und Laptops von AventiPC: Lenovo ThinkBook, Dell Latitude Rugged und ThinkCentre wie neu, mit echten Fotos. Kauf über Vinted.",
+        "Alle gebrauchten PCs und Laptops von FindBetter: Lenovo ThinkBook, Dell Latitude Rugged und ThinkCentre wie neu, mit echten Fotos. Kauf über Vinted.",
       count: (n) => (n === 1 ? "1 Computer im Angebot" : `${n} Computer im Angebot`),
     },
     brand: {
@@ -108,7 +108,7 @@ const de: Dictionary = {
     ],
     featuredTitle: "Jetzt im Angebot",
     featuredText: "Jeder Computer ist ein Einzelstück: Sobald er verkauft ist, verschwindet er von der Website.",
-    whyTitle: "Warum bei AventiPC kaufen",
+    whyTitle: "Warum bei FindBetter kaufen",
     searchesTitle: "Gebrauchte PCs und Laptops in Ihrer Stadt",
     searchesText: "Ratgeber und Verfügbarkeit für alle, die einen Computer in Berlin, Hamburg, München, Köln oder Frankfurt suchen.",
     faqTitle: "Häufige Fragen",
@@ -284,9 +284,9 @@ const de: Dictionary = {
       title: "Über uns",
       metaTitle: "Über uns: gebrauchte PCs wie neu aus Mailand",
       metaDescription:
-        "AventiPC ist ein kleiner Shop für gebrauchte PCs in Mailand: Wir wählen Business-Computer im Zustand wie neu aus, testen und fotografieren sie.",
+        "FindBetter ist ein kleiner Shop für gebrauchte PCs in Mailand: Wir wählen Business-Computer im Zustand wie neu aus, testen und fotografieren sie.",
       intro:
-        "AventiPC ist ein kleines Geschäft für gebrauchte Computer in Mailand. Wir wählen Business-Notebooks und Mini-PCs im Zustand wie neu aus, testen sie und bieten sie mit echten Fotos und einer ehrlichen Beschreibung an.",
+        "FindBetter ist ein kleines Geschäft für gebrauchte Computer in Mailand. Wir wählen Business-Notebooks und Mini-PCs im Zustand wie neu aus, testen sie und bieten sie mit echten Fotos und einer ehrlichen Beschreibung an.",
       sections: [
         {
           heading: "Was wir machen",
@@ -312,7 +312,7 @@ const de: Dictionary = {
       title: "So kaufen Sie",
       metaTitle: "So kaufen Sie sicher über Vinted",
       metaDescription:
-        "Die Computer von AventiPC kaufen Sie über Vinted: Bezahlung, Versand und Käuferschutz werden von der Plattform abgewickelt.",
+        "Die Computer von FindBetter kaufen Sie über Vinted: Bezahlung, Versand und Käuferschutz werden von der Plattform abgewickelt.",
       intro: "Auf dieser Website finden Sie Fotos und technische Daten der angebotenen Computer. Der eigentliche Kauf erfolgt über Vinted.",
       sections: [
         {
@@ -337,10 +337,10 @@ const de: Dictionary = {
       title: "Kontakt",
       metaTitle: "Kontakt",
       metaDescription:
-        "Fragen zu unseren Computern? Schreiben Sie an info@aventipc.com oder rufen Sie +39 02 1234 5678 an, Montag bis Freitag von 9 bis 18 Uhr.",
+        "Fragen zu unseren Computern? Schreiben Sie an info@findbetter.eu oder rufen Sie +39 02 1234 5678 an, Montag bis Freitag von 9 bis 18 Uhr.",
       intro: "Bei Fragen zu einem Computer, für weitere Fotos oder einen Termin zur Besichtigung können Sie uns schreiben oder anrufen.",
       sections: [
-        { heading: "E-Mail", paragraphs: ["Schreiben Sie an info@aventipc.com. Wir antworten in der Regel innerhalb eines Werktags."] },
+        { heading: "E-Mail", paragraphs: ["Schreiben Sie an info@findbetter.eu. Wir antworten in der Regel innerhalb eines Werktags."] },
         { heading: "Telefon", paragraphs: ["Rufen Sie +39 02 1234 5678 an, Montag bis Freitag von 9 bis 18 Uhr."] },
         { heading: "Adresse", paragraphs: ["Via Alessandro Volta 12, 20121 Mailand (Milano), Italien. Besuche nur nach Terminvereinbarung."] },
       ],
@@ -349,14 +349,14 @@ const de: Dictionary = {
       title: "Datenschutz",
       metaTitle: "Datenschutzerklärung",
       metaDescription:
-        "Welche Daten AventiPC erhebt, wenn Sie die Website besuchen oder uns kontaktieren, wofür wir sie nutzen und welche Rechte Sie nach der DSGVO haben.",
+        "Welche Daten FindBetter erhebt, wenn Sie die Website besuchen oder uns kontaktieren, wofür wir sie nutzen und welche Rechte Sie nach der DSGVO haben.",
       intro:
         "Diese Datenschutzerklärung erläutert, welche personenbezogenen Daten wir verarbeiten, wenn Sie die Website besuchen oder uns schreiben, und welche Rechte Sie nach der Verordnung (EU) 2016/679 (DSGVO) haben.",
       sections: [
         {
           heading: "Verantwortlicher",
           paragraphs: [
-            "Verantwortlich ist AventiPC, Via Alessandro Volta 12, 20121 Mailand (Milano), Italien. Für alle Anfragen zum Datenschutz schreiben Sie an info@aventipc.com.",
+            "Verantwortlich ist FindBetter, Via Alessandro Volta 12, 20121 Mailand (Milano), Italien. Für alle Anfragen zum Datenschutz schreiben Sie an info@findbetter.eu.",
           ],
         },
         {
@@ -374,7 +374,7 @@ const de: Dictionary = {
         {
           heading: "Ihre Rechte",
           paragraphs: [
-            "Sie können Auskunft über Ihre Daten sowie deren Berichtigung oder Löschung verlangen, indem Sie an info@aventipc.com schreiben. Außerdem können Sie sich bei der italienischen Datenschutzbehörde (Garante per la protezione dei dati personali) oder bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes beschweren.",
+            "Sie können Auskunft über Ihre Daten sowie deren Berichtigung oder Löschung verlangen, indem Sie an info@findbetter.eu schreiben. Außerdem können Sie sich bei der italienischen Datenschutzbehörde (Garante per la protezione dei dati personali) oder bei der Datenschutzaufsichtsbehörde Ihres Bundeslandes beschweren.",
           ],
         },
       ],
@@ -383,12 +383,12 @@ const de: Dictionary = {
       title: "Nutzungsbedingungen",
       metaTitle: "Nutzungsbedingungen",
       metaDescription:
-        "AGB der Website AventiPC: Die Website stellt gebrauchte Computer vor, der Verkauf erfolgt über Vinted nach den Bedingungen der Plattform.",
-      intro: "Diese Website stellt die gebrauchten Computer vor, die AventiPC zum Verkauf anbietet. Mit der Nutzung akzeptieren Sie die folgenden Bedingungen.",
+        "AGB der Website FindBetter: Die Website stellt gebrauchte Computer vor, der Verkauf erfolgt über Vinted nach den Bedingungen der Plattform.",
+      intro: "Diese Website stellt die gebrauchten Computer vor, die FindBetter zum Verkauf anbietet. Mit der Nutzung akzeptieren Sie die folgenden Bedingungen.",
       sections: [
         {
           heading: "Betreiber",
-          paragraphs: ["Die Website wird betrieben von AventiPC, Via Alessandro Volta 12, 20121 Mailand (Milano), Italien, E-Mail info@aventipc.com."],
+          paragraphs: ["Die Website wird betrieben von FindBetter, Via Alessandro Volta 12, 20121 Mailand (Milano), Italien, E-Mail info@findbetter.eu."],
         },
         {
           heading: "Produktinformationen",
@@ -428,7 +428,7 @@ const de: Dictionary = {
         metaDescription: (c) =>
           `Gebrauchte Laptops in ${c.name}${c.priceFrom ? ` ab ${c.priceFrom}` : ""}: Lenovo und Dell wie neu, getestet und mit echten Fotos. Kauf mit Käuferschutz auf Vinted.`,
         intro: (c) => [
-          `Sie suchen gebrauchte Laptops in ${c.name}? AventiPC wählt Business-Notebooks von Lenovo und Dell im Zustand wie neu aus: Jeder Computer ist getestet, genau beschrieben und so fotografiert, wie er ist.`,
+          `Sie suchen gebrauchte Laptops in ${c.name}? FindBetter wählt Business-Notebooks von Lenovo und Dell im Zustand wie neu aus: Jeder Computer ist getestet, genau beschrieben und so fotografiert, wie er ist.`,
           c.pickup
             ? `In ${c.name} können Sie den Computer nach Terminvereinbarung auch vor Ort ansehen und abholen. Alternativ kaufen Sie ihn auf Vinted und erhalten ihn mit dem Versand der Plattform.`
             : `Der Computer kommt mit dem Versand von Vinted zu Ihnen nach ${c.name}: Sie bezahlen auf der Plattform und sind bis zur Zustellung durch den Käuferschutz abgesichert.`,

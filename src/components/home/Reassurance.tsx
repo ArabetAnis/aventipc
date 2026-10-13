@@ -16,7 +16,7 @@ export function Reassurance({ items }: { items: { icon: ReassuranceIcon; title: 
         const Icon = icons[item.icon];
         return (
           <li key={item.title} className="flex gap-4 lg:px-8 lg:first:pl-0 lg:last:pr-0">
-            <Icon aria-hidden="true" className="mt-0.5 size-6 shrink-0 text-aventi-blue" strokeWidth={1.75} />
+            <Icon aria-hidden="true" className="mt-0.5 size-6 shrink-0 text-accent" strokeWidth={1.75} />
             <div>
               <h3 className="font-sans text-base font-bold">{item.title}</h3>
               <p className="mt-1 text-sm leading-relaxed text-ink-soft">{item.text}</p>

@@ -1,4 +1,4 @@
-/** Shared catalogue types for AventiPC. Keep this file free of runtime code. */
+/** Shared catalogue types for FindBetter. Keep this file free of runtime code. */
 
 export type BrandSlug = "dell" | "lenovo";
 

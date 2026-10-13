@@ -28,7 +28,7 @@ export interface ThemeText {
   /** Capitalized short label for links, e.g. "Portatili economici". */
   label: string;
   hub: {
-    /** <title> without the " | AventiPC" suffix. Max 48 characters. */
+    /** <title> without the " | FindBetter" suffix. Max 48 characters. */
     title: string;
     h1: string;
     /** Max 155 characters. */
@@ -100,7 +100,7 @@ export type ReassuranceIcon = "camera" | "check" | "bag" | "headset";
 
 export interface Dictionary {
   meta: {
-    /** Home <title>, used as-is (absolute). Max 60 characters, includes "AventiPC". */
+    /** Home <title>, used as-is (absolute). Max 60 characters, includes "FindBetter". */
     homeTitle: string;
     /** Home meta description, max 155 characters. */
     homeDescription: string;

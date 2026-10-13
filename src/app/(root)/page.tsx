@@ -8,7 +8,7 @@ import { Wordmark } from "@/components/brand/Wordmark";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { LanguageHint } from "@/components/layout/LanguageHint";
 
-const title = "AventiPC — Used PCs and laptops, like new";
+const title = "FindBetter — Used PCs and laptops, like new";
 const description =
   "Used Lenovo and Dell laptops in like-new condition, with real photos. Italiano · Français · Español · Deutsch · Nederlands.";
 
@@ -38,7 +38,7 @@ const headline: Record<string, string> = {
 export default function LanguageChooser() {
   return (
     <main className="mx-auto flex w-full max-w-page flex-1 flex-col justify-center px-6 py-16 md:px-8">
-      <Wordmark variant="light" className="h-10 w-auto self-start md:h-12" />
+      <Wordmark variant="light" priority className="h-16 w-auto self-start md:h-20" />
       <h1 className="mt-10 max-w-[20ch] text-display md:text-hero">Choose your language</h1>
       <p className="mt-4 max-w-[60ch] text-lead text-ink-soft">
         Scegli la lingua · Choisissez votre langue · Elige tu idioma · Sprache wählen · Kies je taal
@@ -52,9 +52,9 @@ export default function LanguageChooser() {
               lang={l}
               data-locale={l}
               data-lang-choice={l}
-              className="group flex h-full flex-col rounded-tile border border-line bg-white p-6 transition-colors hover:border-lilac data-[suggested=true]:border-aventi-blue"
+              className="group flex h-full flex-col rounded-tile border border-line bg-white p-6 transition-colors hover:border-accent-soft data-[suggested=true]:border-accent"
             >
-              <span className="font-display text-heading font-semibold text-ink group-hover:text-aventi-blue">{localeMeta[l].nativeName}</span>
+              <span className="font-display text-heading font-semibold text-ink group-hover:text-accent">{localeMeta[l].nativeName}</span>
               <span className="mt-1 text-sm text-ink-muted">{localeMeta[l].markets}</span>
               <span className="mt-4 text-sm text-ink-soft">{headline[l]}</span>
             </Link>

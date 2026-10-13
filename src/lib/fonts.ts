@@ -1,6 +1,7 @@
-import { Outfit, Manrope } from "next/font/google";
+import { Montserrat, Manrope } from "next/font/google";
 
-export const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin", "latin-ext"], display: "swap" });
+/** Montserrat for headings (matches the logo's geometric lettering), Manrope for body text. */
+export const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin", "latin-ext"], weight: ["600", "700"], display: "swap" });
 export const manrope = Manrope({ variable: "--font-manrope", subsets: ["latin", "latin-ext"], display: "swap" });
 
-export const fontClasses = `${outfit.variable} ${manrope.variable}`;
+export const fontClasses = `${montserrat.variable} ${manrope.variable}`;

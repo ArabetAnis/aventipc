@@ -21,7 +21,7 @@ export function SiteHeader({ locale, dict, languages }: { locale: Locale; dict: 
     <header className="sticky top-0 z-40 border-b border-line bg-paper/80 backdrop-blur-md">
       <div className="relative mx-auto flex h-16 max-w-page items-center gap-4 px-6 md:px-8 lg:h-[4.5rem]">
         <Link href={href(locale, { kind: "home" })} aria-label={dict.ui.homeAria} className="flex shrink-0 items-center">
-          <Wordmark variant="light" className="h-7 w-auto lg:h-8" />
+          <Wordmark variant="light" priority className="h-10 w-auto lg:h-12" />
         </Link>
 
         <nav aria-label={dict.ui.mainMenu} className="ml-6 hidden lg:block">

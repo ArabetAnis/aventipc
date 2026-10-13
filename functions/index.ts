@@ -10,7 +10,7 @@
  */
 
 const SUPPORTED = ["it", "fr", "es", "de", "nl"];
-const COOKIE = "aventipc_lang";
+const COOKIE = "findbetter_lang";
 
 interface Context {
   request: Request;

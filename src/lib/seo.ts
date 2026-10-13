@@ -39,7 +39,7 @@ interface PageMetaInput {
   locale: Locale;
   key: RouteKey;
   path: string;
-  /** Title without the " | AventiPC" suffix (added by the layout template) unless absoluteTitle is set. */
+  /** Title without the " | FindBetter" suffix (added by the layout template) unless absoluteTitle is set. */
   title: string;
   absoluteTitle?: boolean;
   description: string;

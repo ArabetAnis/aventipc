@@ -10,7 +10,7 @@ export function LinkChips({ items }: { items: { label: string; href: string; cur
             href={item.href}
             aria-current={item.current ? "page" : undefined}
             className={`inline-flex min-h-10 items-center rounded-full border px-4 py-2 text-sm font-semibold transition-colors ${
-              item.current ? "border-ink bg-ink text-white" : "border-line bg-white text-ink-soft hover:border-lilac hover:text-ink"
+              item.current ? "border-ink bg-ink text-white" : "border-line bg-white text-ink-soft hover:border-accent-soft hover:text-ink"
             }`}
           >
             {item.label}

@@ -1,21 +1,21 @@
 @import "tailwindcss";
 
-/* ---------- Brand tokens (derived from the AventiPC wordmark) ---------- */
+/* ---------- Brand tokens (derived from the FindBetter logo: navy, steel blue, ice) ---------- */
 @theme {
-  --color-aventi-blue: #3d7bf0;
-  --color-periwinkle: #7c7de8;
-  --color-lilac: #b48ce1;
-  --color-orchid: #d8a6dc;
-  --color-blush: #ebc7d9;
-  --color-cream: #f4e4df;
+  --color-navy: #0b1424;
+  --color-steel: #6c8699;
+  --color-ice: #f3f6fa;
+  /* Accent for links, icons and focus: steel blue deep enough for text contrast on white. */
+  --color-accent: #2f5677;
+  --color-accent-soft: #9db3c8;
 
-  --color-ink: #15121d;
-  --color-ink-soft: #5a5566;
-  --color-ink-muted: #8b8697;
-  --color-paper: #fdfcfe;
-  --color-paper-tint: #f7f4fa;
-  --color-line: #e8e3f0;
-  --color-line-strong: #d9d2e4;
+  --color-ink: #0f1b2d;
+  --color-ink-soft: #4e5b6b;
+  --color-ink-muted: #7b8794;
+  --color-paper: #fbfcfe;
+  --color-paper-tint: #f1f5f9;
+  --color-line: #e2e8ef;
+  --color-line-strong: #cbd5e0;
   --color-success: #1f8a5b;
   --color-danger: #c2415b;
 
@@ -43,7 +43,7 @@
 }
 
 @theme inline {
-  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -81,36 +81,28 @@ p {
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-aventi-blue);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-lilac) 35%, white);
+  background: color-mix(in oklab, var(--color-accent-soft) 45%, white);
   color: var(--color-ink);
 }
 
-/* ---------- Brand gradient utilities ---------- */
+/* ---------- Brand gradient utilities (logo palette) ---------- */
 @utility brand-gradient {
-  background-image: linear-gradient(
-    90deg,
-    #3d7bf0 0%,
-    #7c7de8 22%,
-    #b48ce1 45%,
-    #d8a6dc 66%,
-    #ebc7d9 84%,
-    #f4e4df 100%
-  );
+  background-image: linear-gradient(90deg, #0b1424 0%, #2f5677 45%, #6c8699 75%, #f3f6fa 100%);
 }
 
-/* Deeper right-hand stops so text/buttons stay legible on white. */
+/* Primary buttons: navy into steel blue, white text stays legible end to end. */
 @utility brand-gradient-strong {
-  background-image: linear-gradient(90deg, #3d7bf0 0%, #6f7be9 35%, #9f86e0 70%, #bf8bd6 100%);
+  background-image: linear-gradient(90deg, #0f1b2d 0%, #24476a 55%, #3d6386 100%);
 }
 
 @utility text-brand-gradient {
-  background-image: linear-gradient(90deg, #3d7bf0 0%, #7c7de8 35%, #b48ce1 70%, #c98fd0 100%);
+  background-image: linear-gradient(90deg, #6c8699 0%, #2f5677 45%, #0f1b2d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -120,22 +112,22 @@ p {
   font-variant-numeric: tabular-nums;
 }
 
-/* Soft page-wide washes. Fixed so they fade under everything. */
+/* Soft page-wide washes in the logo's steel and ice tones. Fixed so they fade under everything. */
 @utility backdrop-washes {
   background:
-    radial-gradient(60% 55% at 6% -4%, color-mix(in srgb, #3d7bf0 17%, transparent), transparent 70%),
-    radial-gradient(48% 46% at 96% 24%, color-mix(in srgb, #b48ce1 18%, transparent), transparent 70%),
-    radial-gradient(56% 48% at 14% 104%, color-mix(in srgb, #ebc7d9 26%, transparent), transparent 70%),
-    radial-gradient(40% 40% at 80% 92%, color-mix(in srgb, #f4e4df 60%, transparent), transparent 70%),
+    radial-gradient(60% 55% at 6% -4%, color-mix(in srgb, #6c8699 20%, transparent), transparent 70%),
+    radial-gradient(48% 46% at 96% 24%, color-mix(in srgb, #2f5677 11%, transparent), transparent 70%),
+    radial-gradient(56% 48% at 14% 104%, color-mix(in srgb, #9db3c8 26%, transparent), transparent 70%),
+    radial-gradient(40% 40% at 80% 92%, color-mix(in srgb, #dce6f0 70%, transparent), transparent 70%),
     var(--color-paper);
 }
 
-/* Halo behind hero product imagery: the wordmark gradient, blurred and faded. */
+/* Halo behind the hero product: steel and ice, blurred into the page. */
 @utility brand-halo {
   background:
-    radial-gradient(ellipse 45% 55% at 22% 50%, color-mix(in srgb, #3d7bf0 62%, transparent), transparent 100%),
-    radial-gradient(ellipse 45% 60% at 52% 50%, color-mix(in srgb, #b48ce1 70%, transparent), transparent 100%),
-    radial-gradient(ellipse 45% 55% at 82% 50%, color-mix(in srgb, #ebc7d9 95%, transparent), transparent 100%);
+    radial-gradient(ellipse 45% 55% at 22% 50%, color-mix(in srgb, #2f5677 48%, transparent), transparent 100%),
+    radial-gradient(ellipse 45% 60% at 52% 50%, color-mix(in srgb, #6c8699 55%, transparent), transparent 100%),
+    radial-gradient(ellipse 45% 55% at 82% 50%, color-mix(in srgb, #c9d7e5 90%, transparent), transparent 100%);
   filter: blur(40px);
 }
 

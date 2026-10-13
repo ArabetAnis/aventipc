@@ -44,7 +44,7 @@ export const products: Product[] = [
     "form": "laptop",
     "condition": "used",
     "price": 19900,
-    "sku": "AV-TB14IIL-I3-8-256",
+    "sku": "FB-TB14IIL-I3-8-256",
     "availability": "in_stock",
     "vinted": "https://www.vinted.it/items/10168548255-pc-lenovo-thinkpad-14-iil-20-sl-intel-core-i3-1005g1-8gb-ram",
     "images": [
@@ -60,35 +60,35 @@ export const products: Product[] = [
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkbook-14-iil-2.jpg",
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkbook-14-iil-3.jpg",
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkbook-14-iil-4.jpg",
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkbook-14-iil-5.jpg",
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       }
     ],
     "featured": true,
@@ -101,7 +101,7 @@ export const products: Product[] = [
     "form": "laptop",
     "condition": "used",
     "price": 28400,
-    "sku": "AV-L5414R-I5-8-256",
+    "sku": "FB-L5414R-I5-8-256",
     "availability": "in_stock",
     "vinted": "https://www.vinted.it/items/10165009288-laptop-dell-latitude-5414-rugged-intel-core-i5-6300u-8gb-of-ram",
     "images": [
@@ -117,35 +117,35 @@ export const products: Product[] = [
         "width": 756,
         "height": 1008,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/dell-latitude-14-rugged-5414-2.jpg",
         "width": 756,
         "height": 1008,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/dell-latitude-14-rugged-5414-3.jpg",
         "width": 1008,
         "height": 756,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/dell-latitude-14-rugged-5414-4.jpg",
         "width": 1008,
         "height": 756,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/dell-latitude-14-rugged-5414-5.jpg",
         "width": 1008,
         "height": 756,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       }
     ],
     "featured": true,
@@ -158,7 +158,7 @@ export const products: Product[] = [
     "form": "desktop",
     "condition": "used",
     "price": null,
-    "sku": "AV-M710Q-I5-4-500",
+    "sku": "FB-M710Q-I5-4-500",
     "availability": "in_stock",
     "images": [
       {
@@ -173,28 +173,28 @@ export const products: Product[] = [
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkcentre-m710q-tiny-2.jpg",
         "width": 1600,
         "height": 1200,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkcentre-m710q-tiny-3.jpg",
         "width": 1600,
         "height": 418,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       },
       {
         "src": "/images/products/lenovo-thinkcentre-m710q-tiny-4.jpg",
         "width": 535,
         "height": 1600,
         "kind": "real",
-        "source": "foto AventiPC"
+        "source": "foto FindBetter"
       }
     ],
     "featured": false,

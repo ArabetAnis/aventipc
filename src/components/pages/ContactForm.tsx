@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 
 /* Demo form: no backend is connected yet. */
 const input =
-  "h-11 w-full rounded-card border border-line bg-white px-4 text-ink focus:border-lilac focus:outline-none focus-visible:ring-2 focus-visible:ring-aventi-blue/40";
+  "h-11 w-full rounded-card border border-line bg-white px-4 text-ink focus:border-accent-soft focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/40";
 
 export interface ContactFormLabels {
   name: string;

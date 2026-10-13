@@ -47,7 +47,7 @@ export function SiteFooter({ locale, dict }: { locale: Locale; dict: Dictionary 
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.3fr_repeat(4,1fr)]">
           <div>
             <Link href={href(locale, { kind: "home" })} aria-label={dict.ui.homeAria} className="inline-block">
-              <Wordmark variant="dark" className="h-8 w-auto" />
+              <Wordmark variant="dark" className="h-14 w-auto" />
             </Link>
             <p className="mt-5 max-w-[36ch] text-sm leading-relaxed text-white/70">{dict.meta.tagline}</p>
             <address className="mt-5 text-sm not-italic leading-relaxed text-white/70">

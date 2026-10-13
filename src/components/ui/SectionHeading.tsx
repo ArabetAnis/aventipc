@@ -20,7 +20,7 @@ export function SectionHeading({ title, text, link, as: Tag = "h2", id }: Sectio
         {text ? <p className="mt-2 text-ink-soft">{text}</p> : null}
       </div>
       {link ? (
-        <Link href={link.href} className="text-sm font-semibold text-aventi-blue hover:underline">
+        <Link href={link.href} className="text-sm font-semibold text-accent hover:underline">
           {link.label}
         </Link>
       ) : null}

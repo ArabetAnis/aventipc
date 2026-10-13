@@ -77,17 +77,17 @@ export function ProductView({ locale, dict, product }: { locale: Locale; dict: D
             <ul className="mt-6 grid gap-2.5 border-t border-line pt-5 text-sm text-ink-soft">
               {product.vinted ? (
                 <li className="flex items-start gap-2.5">
-                  <ShieldCheck aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-aventi-blue" /> {p.vintedNote}
+                  <ShieldCheck aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" /> {p.vintedNote}
                 </li>
               ) : null}
               <li className="flex items-start gap-2.5">
-                <Camera aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-aventi-blue" /> {p.photosNote}
+                <Camera aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" /> {p.photosNote}
               </li>
               <li className="flex items-start gap-2.5">
-                <MessageCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-aventi-blue" />
+                <MessageCircle aria-hidden="true" className="mt-0.5 size-4 shrink-0 text-accent" />
                 <span>
                   {p.questions}{" "}
-                  <Link href={href(locale, { kind: "page", page: "contact" })} className="font-semibold text-aventi-blue hover:underline">
+                  <Link href={href(locale, { kind: "page", page: "contact" })} className="font-semibold text-accent hover:underline">
                     {p.writeUs}
                   </Link>
                 </span>
@@ -98,7 +98,7 @@ export function ProductView({ locale, dict, product }: { locale: Locale; dict: D
           <ul className="mt-8 space-y-2.5">
             {t.highlights.map((h) => (
               <li key={h} className="flex items-start gap-3 text-ink">
-                <Check aria-hidden="true" className="mt-1 size-4 shrink-0 text-aventi-blue" strokeWidth={2.5} />
+                <Check aria-hidden="true" className="mt-1 size-4 shrink-0 text-accent" strokeWidth={2.5} />
                 <span>{h}</span>
               </li>
             ))}

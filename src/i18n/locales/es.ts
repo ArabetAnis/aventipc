@@ -6,7 +6,7 @@ import type { Dictionary } from "../types";
  */
 const es: Dictionary = {
   meta: {
-    homeTitle: "AventiPC — Portátiles y PC de segunda mano como nuevos",
+    homeTitle: "FindBetter — Portátiles y PC de segunda mano como nuevos",
     homeDescription:
       "Portátiles y PC de segunda mano como nuevos: Lenovo ThinkBook y Dell Latitude probados, con fotos reales de cada unidad. Compra protegida en Vinted.",
     tagline: "Portátiles y PC de segunda mano como nuevos, fotografiados y descritos tal como son.",
@@ -16,7 +16,7 @@ const es: Dictionary = {
   countries: { IT: "Italia", FR: "Francia", BE: "Bélgica", ES: "España", DE: "Alemania" },
   ui: {
     skipToContent: "Ir al contenido",
-    homeAria: "AventiPC, volver al inicio",
+    homeAria: "FindBetter, volver al inicio",
     mainMenu: "Menú principal",
     openMenu: "Abrir el menú",
     closeMenu: "Cerrar el menú",
@@ -60,7 +60,7 @@ const es: Dictionary = {
       intro:
         "Portátiles y mini PC de segunda mano en estado como nuevo, probados y fotografiados uno a uno. Cada ordenador se compra en Vinted con la Protección al comprador.",
       metaDescription:
-        "PC y portátiles de segunda mano de AventiPC: Lenovo ThinkBook, Dell Latitude Rugged y ThinkCentre como nuevos, con fotos reales. Compra en Vinted.",
+        "PC y portátiles de segunda mano de FindBetter: Lenovo ThinkBook, Dell Latitude Rugged y ThinkCentre como nuevos, con fotos reales. Compra en Vinted.",
       count: (n) => (n === 1 ? "1 ordenador a la venta" : `${n} ordenadores a la venta`),
     },
     brand: {
@@ -108,7 +108,7 @@ const es: Dictionary = {
     ],
     featuredTitle: "A la venta ahora",
     featuredText: "Cada ordenador es una unidad única: cuando se vende, desaparece de la web.",
-    whyTitle: "Por qué comprar en AventiPC",
+    whyTitle: "Por qué comprar en FindBetter",
     searchesTitle: "Portátiles de segunda mano en tu ciudad",
     searchesText: "Guías y disponibilidad para quien busca un ordenador en Madrid, Barcelona, Valencia, Sevilla y Zaragoza.",
     faqTitle: "Preguntas frecuentes",
@@ -284,9 +284,9 @@ const es: Dictionary = {
       title: "Quiénes somos",
       metaTitle: "Quiénes somos: PC de segunda mano desde Milán",
       metaDescription:
-        "AventiPC es una pequeña tienda de ordenadores de segunda mano en Milán: elegimos equipos profesionales como nuevos, los probamos y los fotografiamos.",
+        "FindBetter es una pequeña tienda de ordenadores de segunda mano en Milán: elegimos equipos profesionales como nuevos, los probamos y los fotografiamos.",
       intro:
-        "AventiPC es una pequeña tienda de ordenadores de segunda mano en Milán. Elegimos portátiles y mini PC profesionales en estado como nuevo, los probamos y los ponemos a la venta con fotos reales y una descripción honesta.",
+        "FindBetter es una pequeña tienda de ordenadores de segunda mano en Milán. Elegimos portátiles y mini PC profesionales en estado como nuevo, los probamos y los ponemos a la venta con fotos reales y una descripción honesta.",
       sections: [
         {
           heading: "Qué hacemos",
@@ -312,7 +312,7 @@ const es: Dictionary = {
       title: "Cómo comprar",
       metaTitle: "Cómo comprar en Vinted con seguridad",
       metaDescription:
-        "Los ordenadores de AventiPC se compran en Vinted: la plataforma gestiona el pago, el envío y la Protección al comprador.",
+        "Los ordenadores de FindBetter se compran en Vinted: la plataforma gestiona el pago, el envío y la Protección al comprador.",
       intro: "En esta web encontrarás las fotos y las características de los ordenadores a la venta. La compra en sí se hace en Vinted.",
       sections: [
         {
@@ -337,10 +337,10 @@ const es: Dictionary = {
       title: "Contacto",
       metaTitle: "Contacto",
       metaDescription:
-        "Escribe a info@aventipc.com o llama al +39 02 1234 5678 de lunes a viernes, de 9 a 18 h, si tienes preguntas sobre los ordenadores a la venta.",
+        "Escribe a info@findbetter.eu o llama al +39 02 1234 5678 de lunes a viernes, de 9 a 18 h, si tienes preguntas sobre los ordenadores a la venta.",
       intro: "Si tienes preguntas sobre un ordenador, quieres más fotos o una cita para verlo en persona, puedes escribirnos o llamarnos.",
       sections: [
-        { heading: "Email", paragraphs: ["Escribe a info@aventipc.com. Solemos responder en un día laborable."] },
+        { heading: "Email", paragraphs: ["Escribe a info@findbetter.eu. Solemos responder en un día laborable."] },
         { heading: "Teléfono", paragraphs: ["Llama al +39 02 1234 5678 de lunes a viernes, de 9:00 a 18:00."] },
         { heading: "Dónde estamos", paragraphs: ["Via Alessandro Volta 12, 20121 Milano (Italia). Visitas solo con cita previa."] },
       ],
@@ -349,14 +349,14 @@ const es: Dictionary = {
       title: "Privacidad",
       metaTitle: "Política de privacidad",
       metaDescription:
-        "Qué datos personales recoge AventiPC cuando visitas la web o nos contactas, para qué los usa y qué derechos tienes según el RGPD.",
+        "Qué datos personales recoge FindBetter cuando visitas la web o nos contactas, para qué los usa y qué derechos tienes según el RGPD.",
       intro:
         "Esta política explica qué datos personales tratamos cuando visitas la web o nos escribes, y qué derechos tienes según el Reglamento (UE) 2016/679 (RGPD).",
       sections: [
         {
           heading: "Responsable del tratamiento",
           paragraphs: [
-            "El responsable es AventiPC, Via Alessandro Volta 12, 20121 Milano (Italia). Para cualquier solicitud sobre privacidad, escribe a info@aventipc.com.",
+            "El responsable es FindBetter, Via Alessandro Volta 12, 20121 Milano (Italia). Para cualquier solicitud sobre privacidad, escribe a info@findbetter.eu.",
           ],
         },
         {
@@ -374,7 +374,7 @@ const es: Dictionary = {
         {
           heading: "Tus derechos",
           paragraphs: [
-            "Puedes solicitar el acceso, la rectificación o la supresión de tus datos escribiendo a info@aventipc.com. También puedes presentar una reclamación ante la autoridad italiana de protección de datos (Garante per la protezione dei dati personali) o ante la Agencia Española de Protección de Datos (AEPD).",
+            "Puedes solicitar el acceso, la rectificación o la supresión de tus datos escribiendo a info@findbetter.eu. También puedes presentar una reclamación ante la autoridad italiana de protección de datos (Garante per la protezione dei dati personali) o ante la Agencia Española de Protección de Datos (AEPD).",
           ],
         },
       ],
@@ -383,12 +383,12 @@ const es: Dictionary = {
       title: "Términos y condiciones",
       metaTitle: "Términos y condiciones",
       metaDescription:
-        "Condiciones de uso de la web de AventiPC: la web presenta ordenadores de segunda mano y la venta se hace en Vinted según las condiciones de la plataforma.",
-      intro: "Esta web presenta los ordenadores de segunda mano que AventiPC pone a la venta. Al usarla, aceptas las condiciones siguientes.",
+        "Condiciones de uso de la web de FindBetter: la web presenta ordenadores de segunda mano y la venta se hace en Vinted según las condiciones de la plataforma.",
+      intro: "Esta web presenta los ordenadores de segunda mano que FindBetter pone a la venta. Al usarla, aceptas las condiciones siguientes.",
       sections: [
         {
           heading: "Quiénes somos",
-          paragraphs: ["La web la gestiona AventiPC, Via Alessandro Volta 12, 20121 Milano (Italia), email info@aventipc.com."],
+          paragraphs: ["La web la gestiona FindBetter, Via Alessandro Volta 12, 20121 Milano (Italia), email info@findbetter.eu."],
         },
         {
           heading: "Información sobre los productos",
@@ -428,7 +428,7 @@ const es: Dictionary = {
         metaDescription: (c) =>
           `Portátiles de segunda mano en ${c.name}${c.priceFrom ? ` desde ${c.priceFrom}` : ""}: Lenovo y Dell como nuevos, probados y con fotos reales. Compra protegida en Vinted.`,
         intro: (c) => [
-          `¿Buscas portátiles de segunda mano en ${c.name}? En AventiPC seleccionamos equipos profesionales Lenovo y Dell en estado como nuevo: cada ordenador se prueba, se describe al detalle y se fotografía tal como es.`,
+          `¿Buscas portátiles de segunda mano en ${c.name}? En FindBetter seleccionamos equipos profesionales Lenovo y Dell en estado como nuevo: cada ordenador se prueba, se describe al detalle y se fotografía tal como es.`,
           c.pickup
             ? `En ${c.name} también puedes ver y recoger el ordenador en persona, con cita previa. Si lo prefieres, lo compras en Vinted y lo recibes con el envío de la plataforma.`
             : `El ordenador te llega a ${c.name} con el envío de Vinted: pagas en la plataforma y te cubre la Protección al comprador hasta la entrega.`,

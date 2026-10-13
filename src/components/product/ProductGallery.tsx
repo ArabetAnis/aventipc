@@ -48,7 +48,7 @@ export function ProductGallery({ images, labels }: ProductGalleryProps) {
                 aria-pressed={i === index}
                 aria-label={labels.showImage[i]}
                 className={`relative block aspect-square w-full overflow-hidden rounded-card border bg-white transition-colors ${
-                  i === index ? "border-lilac" : "border-line hover:border-line-strong"
+                  i === index ? "border-accent-soft" : "border-line hover:border-line-strong"
                 }`}
               >
                 <Image src={image.src} alt="" fill sizes="(min-width: 640px) 96px, 16vw" className={image.kind === "model" ? "object-contain p-1.5" : "object-cover"} />

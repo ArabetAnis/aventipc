@@ -6,7 +6,7 @@ import type { Dictionary } from "../types";
  */
 const nl: Dictionary = {
   meta: {
-    homeTitle: "AventiPC — Tweedehands laptops als nieuw, met echte foto's",
+    homeTitle: "FindBetter — Tweedehands laptops als nieuw, met echte foto's",
     homeDescription:
       "Tweedehands laptops en pc's als nieuw: geteste Lenovo ThinkBook en Dell Latitude, met echte foto's van het toestel. Veilig kopen via Vinted.",
     tagline: "Tweedehands pc's en laptops als nieuw, gefotografeerd en beschreven zoals ze echt zijn.",
@@ -16,7 +16,7 @@ const nl: Dictionary = {
   countries: { IT: "Italië", FR: "Frankrijk", BE: "België", ES: "Spanje", DE: "Duitsland" },
   ui: {
     skipToContent: "Naar de inhoud",
-    homeAria: "AventiPC, terug naar de homepage",
+    homeAria: "FindBetter, terug naar de homepage",
     mainMenu: "Hoofdmenu",
     openMenu: "Menu openen",
     closeMenu: "Menu sluiten",
@@ -60,7 +60,7 @@ const nl: Dictionary = {
       intro:
         "Tweedehands laptops en mini-pc's in als-nieuwstaat, een voor een getest en gefotografeerd. Elke computer koop je op Vinted, met Kopersbescherming.",
       metaDescription:
-        "Alle tweedehands pc's en laptops van AventiPC: Lenovo ThinkBook, Dell Latitude Rugged en ThinkCentre als nieuw, met echte foto's. Kopen via Vinted.",
+        "Alle tweedehands pc's en laptops van FindBetter: Lenovo ThinkBook, Dell Latitude Rugged en ThinkCentre als nieuw, met echte foto's. Kopen via Vinted.",
       count: (n) => (n === 1 ? "1 computer te koop" : `${n} computers te koop`),
     },
     brand: {
@@ -108,7 +108,7 @@ const nl: Dictionary = {
     ],
     featuredTitle: "Nu te koop",
     featuredText: "Elke computer is een uniek exemplaar: zodra hij verkocht is, verdwijnt hij van de site.",
-    whyTitle: "Waarom kopen bij AventiPC",
+    whyTitle: "Waarom kopen bij FindBetter",
     searchesTitle: "Tweedehands pc's en laptops in jouw stad",
     searchesText: "Gidsen en aanbod voor wie een computer zoekt in Brussel, Antwerpen, Gent, Charleroi en Luik.",
     faqTitle: "Veelgestelde vragen",
@@ -285,9 +285,9 @@ const nl: Dictionary = {
       title: "Over ons",
       metaTitle: "Over ons: tweedehands pc's als nieuw uit Milaan",
       metaDescription:
-        "AventiPC is een kleine winkel in tweedehands pc's in Milaan: we kiezen professionele computers als nieuw, testen ze en fotograferen ze.",
+        "FindBetter is een kleine winkel in tweedehands pc's in Milaan: we kiezen professionele computers als nieuw, testen ze en fotograferen ze.",
       intro:
-        "AventiPC is een kleine winkel in tweedehands computers in Milaan. We kiezen professionele laptops en mini-pc's in als-nieuwstaat, testen ze en zetten ze te koop met echte foto's en een eerlijke beschrijving.",
+        "FindBetter is een kleine winkel in tweedehands computers in Milaan. We kiezen professionele laptops en mini-pc's in als-nieuwstaat, testen ze en zetten ze te koop met echte foto's en een eerlijke beschrijving.",
       sections: [
         {
           heading: "Wat we doen",
@@ -313,7 +313,7 @@ const nl: Dictionary = {
       title: "Hoe kopen",
       metaTitle: "Veilig kopen via Vinted, zo werkt het",
       metaDescription:
-        "Computers van AventiPC koop je op Vinted: betaling, verzending en Kopersbescherming worden door het platform geregeld.",
+        "Computers van FindBetter koop je op Vinted: betaling, verzending en Kopersbescherming worden door het platform geregeld.",
       intro: "Op deze site vind je foto's en specificaties van de computers die te koop staan. De eigenlijke aankoop gebeurt op Vinted.",
       sections: [
         {
@@ -338,10 +338,10 @@ const nl: Dictionary = {
       title: "Contact",
       metaTitle: "Contact opnemen",
       metaDescription:
-        "Mail naar info@aventipc.com of bel +39 02 1234 5678 van maandag tot vrijdag, 9–18 uur, met vragen over de computers die te koop staan.",
+        "Mail naar info@findbetter.eu of bel +39 02 1234 5678 van maandag tot vrijdag, 9–18 uur, met vragen over de computers die te koop staan.",
       intro: "Voor vragen over een computer, extra foto's of een afspraak om hem te komen bekijken, kun je ons mailen of bellen.",
       sections: [
-        { heading: "E-mail", paragraphs: ["Mail naar info@aventipc.com. We antwoorden meestal binnen één werkdag."] },
+        { heading: "E-mail", paragraphs: ["Mail naar info@findbetter.eu. We antwoorden meestal binnen één werkdag."] },
         { heading: "Telefoon", paragraphs: ["Bel +39 02 1234 5678 van maandag tot vrijdag, van 9 tot 18 uur."] },
         { heading: "Adres", paragraphs: ["Via Alessandro Volta 12, 20121 Milaan (Milano). Bezoek alleen op afspraak."] },
       ],
@@ -350,14 +350,14 @@ const nl: Dictionary = {
       title: "Privacy",
       metaTitle: "Privacyverklaring",
       metaDescription:
-        "Welke persoonsgegevens AventiPC verzamelt als je de site bezoekt of contact opneemt, waarom, en welke rechten je hebt volgens de AVG (GDPR).",
+        "Welke persoonsgegevens FindBetter verzamelt als je de site bezoekt of contact opneemt, waarom, en welke rechten je hebt volgens de AVG (GDPR).",
       intro:
         "Deze verklaring legt uit welke persoonsgegevens we verwerken als je de site bezoekt of ons schrijft, en welke rechten je hebt volgens Verordening (EU) 2016/679 (AVG, ook GDPR genoemd).",
       sections: [
         {
           heading: "Verwerkingsverantwoordelijke",
           paragraphs: [
-            "Verwerkingsverantwoordelijke is AventiPC, Via Alessandro Volta 12, 20121 Milaan (Milano). Voor elke vraag over privacy mail je naar info@aventipc.com.",
+            "Verwerkingsverantwoordelijke is FindBetter, Via Alessandro Volta 12, 20121 Milaan (Milano). Voor elke vraag over privacy mail je naar info@findbetter.eu.",
           ],
         },
         {
@@ -375,7 +375,7 @@ const nl: Dictionary = {
         {
           heading: "Je rechten",
           paragraphs: [
-            "Je kunt inzage, correctie of verwijdering van je gegevens vragen via info@aventipc.com. Je kunt ook een klacht indienen bij de Italiaanse toezichthouder (Garante per la protezione dei dati personali) of bij de Belgische Gegevensbeschermingsautoriteit (GBA).",
+            "Je kunt inzage, correctie of verwijdering van je gegevens vragen via info@findbetter.eu. Je kunt ook een klacht indienen bij de Italiaanse toezichthouder (Garante per la protezione dei dati personali) of bij de Belgische Gegevensbeschermingsautoriteit (GBA).",
           ],
         },
       ],
@@ -384,10 +384,10 @@ const nl: Dictionary = {
       title: "Algemene voorwaarden",
       metaTitle: "Algemene voorwaarden",
       metaDescription:
-        "Gebruiksvoorwaarden van de site van AventiPC: de site toont tweedehands computers, de verkoop gebeurt op Vinted volgens de voorwaarden van het platform.",
-      intro: "Deze site toont de tweedehands computers die AventiPC te koop aanbiedt. Door de site te gebruiken, aanvaard je de volgende voorwaarden.",
+        "Gebruiksvoorwaarden van de site van FindBetter: de site toont tweedehands computers, de verkoop gebeurt op Vinted volgens de voorwaarden van het platform.",
+      intro: "Deze site toont de tweedehands computers die FindBetter te koop aanbiedt. Door de site te gebruiken, aanvaard je de volgende voorwaarden.",
       sections: [
-        { heading: "Wie we zijn", paragraphs: ["De site wordt beheerd door AventiPC, Via Alessandro Volta 12, 20121 Milaan (Milano), e-mail info@aventipc.com."] },
+        { heading: "Wie we zijn", paragraphs: ["De site wordt beheerd door FindBetter, Via Alessandro Volta 12, 20121 Milaan (Milano), e-mail info@findbetter.eu."] },
         {
           heading: "Productinformatie",
           paragraphs: [
@@ -426,7 +426,7 @@ const nl: Dictionary = {
         metaDescription: (c) =>
           `Tweedehands laptops in ${c.name}${c.priceFrom ? ` vanaf ${c.priceFrom}` : ""}: Lenovo en Dell als nieuw, getest en met echte foto's. Veilig kopen via Vinted.`,
         intro: (c) => [
-          `Zoek je tweedehands laptops in ${c.name}? AventiPC selecteert professionele laptops van Lenovo en Dell in als-nieuwstaat: elke computer is getest, uitgebreid beschreven en gefotografeerd zoals hij is.`,
+          `Zoek je tweedehands laptops in ${c.name}? FindBetter selecteert professionele laptops van Lenovo en Dell in als-nieuwstaat: elke computer is getest, uitgebreid beschreven en gefotografeerd zoals hij is.`,
           c.pickup
             ? `In ${c.name} kun je de computer ook op afspraak komen bekijken en afhalen. Je kunt hem ook op Vinted kopen en laten verzenden via het platform.`
             : `De computer komt in ${c.name} aan met de verzending van Vinted: je betaalt op het platform en bent tot de levering gedekt door de Kopersbescherming.`,

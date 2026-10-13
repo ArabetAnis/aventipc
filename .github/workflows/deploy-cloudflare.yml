@@ -1,6 +1,6 @@
 name: Deploy to Cloudflare Pages
 
-# Builds the static export for https://aventipc.com and uploads it to Cloudflare Pages.
+# Builds the static export for https://findbetter.eu and uploads it to Cloudflare Pages.
 # Never create or first-deploy the project from an AI-agent shell: wrangler then creates a
 # Workers project instead of a Pages project. Let this workflow create it on its first run.
 # Inactive until the repository has two secrets:
@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PROJECT_NAME: aventipc
+  PROJECT_NAME: findbetter
 
 jobs:
   check:
@@ -56,7 +56,7 @@ jobs:
       - name: Build static export
         env:
           NEXT_PUBLIC_STATIC_EXPORT: "1"
-          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://aventipc.com' }}
+          NEXT_PUBLIC_SITE_URL: ${{ vars.SITE_URL || 'https://findbetter.eu' }}
         run: pnpm build
       - name: Create the Pages project on first run
         env:

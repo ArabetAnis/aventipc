@@ -1,4 +1,4 @@
-# AventiPC
+# FindBetter
 
 Piccolo negozio di PC e notebook usati: il sito mostra foto reali e caratteristiche, l'acquisto avviene su Vinted. Disponibile in italiano, francese, spagnolo, tedesco e olandese. Next.js 16 (App Router), React 19, Tailwind CSS v4, TypeScript.
 
@@ -13,7 +13,7 @@ pnpm build && pnpm start
 pnpm lint
 ```
 
-Imposta `NEXT_PUBLIC_SITE_URL` (default `https://aventipc.com`) per canonical, sitemap e structured data.
+Imposta `NEXT_PUBLIC_SITE_URL` (default `https://findbetter.eu`) per canonical, sitemap e structured data.
 
 ## Lingue e SEO
 
@@ -31,7 +31,7 @@ Imposta `NEXT_PUBLIC_SITE_URL` (default `https://aventipc.com`) per canonical, s
 
 ## Pubblicazione
 
-Guida passo passo per aventipc.com su Cloudflare: `docs/hosting-cloudflare.md`.
+Guida passo passo per findbetter.eu su Cloudflare: `docs/hosting-cloudflare.md`.
 
 ## Note
 

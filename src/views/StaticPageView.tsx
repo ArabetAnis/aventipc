@@ -30,25 +30,25 @@ export function StaticPageView({ locale, dict, page }: { locale: Locale; dict: D
               <div className="rounded-tile border border-line bg-white p-6">
                 <ul className="space-y-4 text-sm">
                   <li className="flex gap-3">
-                    <Mail aria-hidden="true" className="size-5 text-aventi-blue" />
+                    <Mail aria-hidden="true" className="size-5 text-accent" />
                     <a href={`mailto:${site.email}`} className="font-semibold hover:underline">
                       {site.email}
                     </a>
                   </li>
                   <li className="flex gap-3">
-                    <Phone aria-hidden="true" className="size-5 text-aventi-blue" />
+                    <Phone aria-hidden="true" className="size-5 text-accent" />
                     <a href={`tel:${site.phone.replace(/\s+/g, "")}`} className="font-semibold hover:underline">
                       {site.phone}
                     </a>
                   </li>
                   <li className="flex gap-3">
-                    <MapPin aria-hidden="true" className="size-5 text-aventi-blue" />
+                    <MapPin aria-hidden="true" className="size-5 text-accent" />
                     <span>
                       {site.address.street}, {site.address.postalCode} {site.address.city}
                     </span>
                   </li>
                   <li className="flex gap-3">
-                    <Clock aria-hidden="true" className="size-5 text-aventi-blue" />
+                    <Clock aria-hidden="true" className="size-5 text-accent" />
                     <span>{dict.ui.contact.hours}</span>
                   </li>
                 </ul>

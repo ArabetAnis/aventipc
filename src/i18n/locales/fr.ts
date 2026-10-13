@@ -6,7 +6,7 @@ import type { Dictionary } from "../types";
  */
 const fr: Dictionary = {
   meta: {
-    homeTitle: "AventiPC — Ordinateurs portables d'occasion comme neufs",
+    homeTitle: "FindBetter — Ordinateurs portables d'occasion comme neufs",
     homeDescription:
       "PC et portables d'occasion comme neufs : Lenovo ThinkBook et Dell Latitude testés, avec photos réelles de l'exemplaire. Achat protégé sur Vinted.",
     tagline: "PC et ordinateurs portables d'occasion comme neufs, photographiés et décrits tels qu'ils sont.",
@@ -16,7 +16,7 @@ const fr: Dictionary = {
   countries: { IT: "Italie", FR: "France", BE: "Belgique", ES: "Espagne", DE: "Allemagne" },
   ui: {
     skipToContent: "Aller au contenu",
-    homeAria: "AventiPC, retour à l'accueil",
+    homeAria: "FindBetter, retour à l'accueil",
     mainMenu: "Menu principal",
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
@@ -60,7 +60,7 @@ const fr: Dictionary = {
       intro:
         "Ordinateurs portables et mini PC d'occasion en état comme neuf, testés et photographiés un par un. Chaque ordinateur s'achète sur Vinted avec la Protection acheteurs.",
       metaDescription:
-        "Tous les PC et portables d'occasion AventiPC : Lenovo ThinkBook, Dell Latitude Rugged et ThinkCentre comme neufs, avec photos réelles. Achat sur Vinted.",
+        "Tous les PC et portables d'occasion FindBetter : Lenovo ThinkBook, Dell Latitude Rugged et ThinkCentre comme neufs, avec photos réelles. Achat sur Vinted.",
       count: (n) => (n === 1 ? "1 ordinateur en vente" : `${n} ordinateurs en vente`),
     },
     brand: {
@@ -108,7 +108,7 @@ const fr: Dictionary = {
     ],
     featuredTitle: "Actuellement en vente",
     featuredText: "Chaque ordinateur est un exemplaire unique : une fois vendu, il disparaît du site.",
-    whyTitle: "Pourquoi acheter chez AventiPC",
+    whyTitle: "Pourquoi acheter chez FindBetter",
     searchesTitle: "PC et portables d'occasion dans votre ville",
     searchesText:
       "Guides et disponibilités pour trouver un ordinateur à Paris, Lyon, Marseille, Toulouse, Nice, Bruxelles, Liège et dans d'autres villes de France et de Belgique.",
@@ -286,9 +286,9 @@ const fr: Dictionary = {
       title: "Qui sommes-nous",
       metaTitle: "Qui sommes-nous : PC d'occasion à Milan",
       metaDescription:
-        "AventiPC est une petite boutique de PC d'occasion à Milan : nous choisissons des ordinateurs professionnels comme neufs, les testons et les photographions.",
+        "FindBetter est une petite boutique de PC d'occasion à Milan : nous choisissons des ordinateurs professionnels comme neufs, les testons et les photographions.",
       intro:
-        "AventiPC est une petite boutique d'ordinateurs d'occasion à Milan. Nous choisissons des ordinateurs portables et des mini PC professionnels en état comme neuf, nous les testons et nous les mettons en vente avec des photos réelles et une description honnête.",
+        "FindBetter est une petite boutique d'ordinateurs d'occasion à Milan. Nous choisissons des ordinateurs portables et des mini PC professionnels en état comme neuf, nous les testons et nous les mettons en vente avec des photos réelles et une description honnête.",
       sections: [
         {
           heading: "Ce que nous faisons",
@@ -314,7 +314,7 @@ const fr: Dictionary = {
       title: "Comment acheter",
       metaTitle: "Comment acheter sur Vinted en toute sécurité",
       metaDescription:
-        "Les ordinateurs AventiPC s'achètent sur Vinted : le paiement, la livraison et la Protection acheteurs sont gérés par la plateforme.",
+        "Les ordinateurs FindBetter s'achètent sur Vinted : le paiement, la livraison et la Protection acheteurs sont gérés par la plateforme.",
       intro: "Sur ce site, vous trouvez les photos et les caractéristiques des ordinateurs en vente. L'achat lui-même se fait sur Vinted.",
       sections: [
         {
@@ -339,10 +339,10 @@ const fr: Dictionary = {
       title: "Contact",
       metaTitle: "Nous contacter",
       metaDescription:
-        "Écrivez à info@aventipc.com ou appelez le +39 02 1234 5678 du lundi au vendredi, de 9 h à 18 h, pour toute question sur les ordinateurs en vente.",
+        "Écrivez à info@findbetter.eu ou appelez le +39 02 1234 5678 du lundi au vendredi, de 9 h à 18 h, pour toute question sur les ordinateurs en vente.",
       intro: "Pour une question sur un ordinateur, d'autres photos ou un rendez-vous pour le voir en personne, vous pouvez nous écrire ou nous appeler.",
       sections: [
-        { heading: "E-mail", paragraphs: ["Écrivez à info@aventipc.com. Nous répondons généralement sous un jour ouvré."] },
+        { heading: "E-mail", paragraphs: ["Écrivez à info@findbetter.eu. Nous répondons généralement sous un jour ouvré."] },
         { heading: "Téléphone", paragraphs: ["Appelez le +39 02 1234 5678 du lundi au vendredi, de 9 h à 18 h."] },
         { heading: "Où nous trouver", paragraphs: ["Via Alessandro Volta 12, 20121 Milano (Italie). Visites uniquement sur rendez-vous."] },
       ],
@@ -351,14 +351,14 @@ const fr: Dictionary = {
       title: "Confidentialité",
       metaTitle: "Politique de confidentialité",
       metaDescription:
-        "Les données personnelles que collecte AventiPC quand vous visitez le site ou nous contactez, pourquoi nous les utilisons et vos droits selon le RGPD.",
+        "Les données personnelles que collecte FindBetter quand vous visitez le site ou nous contactez, pourquoi nous les utilisons et vos droits selon le RGPD.",
       intro:
         "Cette politique explique quelles données personnelles nous traitons lorsque vous visitez le site ou nous écrivez, et quels sont vos droits selon le règlement (UE) 2016/679 (RGPD).",
       sections: [
         {
           heading: "Responsable du traitement",
           paragraphs: [
-            "Le responsable du traitement est AventiPC, Via Alessandro Volta 12, 20121 Milano (Italie). Pour toute demande relative à vos données, écrivez à info@aventipc.com.",
+            "Le responsable du traitement est FindBetter, Via Alessandro Volta 12, 20121 Milano (Italie). Pour toute demande relative à vos données, écrivez à info@findbetter.eu.",
           ],
         },
         {
@@ -376,7 +376,7 @@ const fr: Dictionary = {
         {
           heading: "Vos droits",
           paragraphs: [
-            "Vous pouvez demander l'accès, la rectification ou l'effacement de vos données en écrivant à info@aventipc.com. Vous pouvez aussi introduire une réclamation auprès du Garante per la protezione dei dati personali, l'autorité italienne, ou de l'autorité de protection des données de votre pays : la CNIL en France, l'APD en Belgique.",
+            "Vous pouvez demander l'accès, la rectification ou l'effacement de vos données en écrivant à info@findbetter.eu. Vous pouvez aussi introduire une réclamation auprès du Garante per la protezione dei dati personali, l'autorité italienne, ou de l'autorité de protection des données de votre pays : la CNIL en France, l'APD en Belgique.",
           ],
         },
       ],
@@ -385,12 +385,12 @@ const fr: Dictionary = {
       title: "Conditions générales",
       metaTitle: "Conditions générales d'utilisation",
       metaDescription:
-        "Conditions d'utilisation du site AventiPC : le site présente des ordinateurs d'occasion, la vente a lieu sur Vinted selon les conditions de la plateforme.",
-      intro: "Ce site présente les ordinateurs d'occasion mis en vente par AventiPC. En l'utilisant, vous acceptez les conditions suivantes.",
+        "Conditions d'utilisation du site FindBetter : le site présente des ordinateurs d'occasion, la vente a lieu sur Vinted selon les conditions de la plateforme.",
+      intro: "Ce site présente les ordinateurs d'occasion mis en vente par FindBetter. En l'utilisant, vous acceptez les conditions suivantes.",
       sections: [
         {
           heading: "Qui sommes-nous",
-          paragraphs: ["Le site est géré par AventiPC, Via Alessandro Volta 12, 20121 Milano (Italie), e-mail info@aventipc.com."],
+          paragraphs: ["Le site est géré par FindBetter, Via Alessandro Volta 12, 20121 Milano (Italie), e-mail info@findbetter.eu."],
         },
         {
           heading: "Informations sur les produits",
@@ -430,7 +430,7 @@ const fr: Dictionary = {
         metaDescription: (c) =>
           `Ordinateur portable d'occasion à ${c.name}${c.priceFrom ? `, à partir de ${c.priceFrom}` : ""} : Lenovo et Dell comme neufs, testés, avec photos réelles. Achat protégé sur Vinted.`,
         intro: (c) => [
-          `Vous cherchez un ordinateur portable d'occasion à ${c.name} ? AventiPC sélectionne des modèles professionnels Lenovo et Dell en état comme neuf : chaque ordinateur est testé, décrit en détail et photographié tel qu'il est.`,
+          `Vous cherchez un ordinateur portable d'occasion à ${c.name} ? FindBetter sélectionne des modèles professionnels Lenovo et Dell en état comme neuf : chaque ordinateur est testé, décrit en détail et photographié tel qu'il est.`,
           c.pickup
             ? `À ${c.name}, vous pouvez aussi voir et retirer l'ordinateur en personne, sur rendez-vous. Sinon, vous l'achetez sur Vinted et le recevez avec la livraison de la plateforme.`
             : `L'ordinateur arrive à ${c.name} avec la livraison Vinted : vous payez sur la plateforme et bénéficiez de la Protection acheteurs jusqu'à la réception.`,

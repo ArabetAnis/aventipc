@@ -12,7 +12,7 @@ export const dynamic = "force-static";
 export const dynamicParams = false;
 
 const size = { width: 1200, height: 630 };
-const gradient = "linear-gradient(90deg,#3d7bf0,#7c7de8,#b48ce1,#d8a6dc,#ebc7d9,#f4e4df)";
+const gradient = "linear-gradient(90deg,#0b1424,#2f5677,#6c8699,#c9d7e5,#f3f6fa)";
 
 /** /og/{locale}.png (default) and /og/{locale}-{product}.png, generated at build time. */
 export function generateStaticParams() {
@@ -40,8 +40,8 @@ export async function GET(_req: Request, ctx: RouteContext<"/og/[file]">) {
   const product = parsed.slug ? getProduct(parsed.slug) : undefined;
 
   if (!product) {
-    const svg = await readFile(path.join(process.cwd(), "public/brand/wordmark.svg"));
-    const wordmark = `data:image/svg+xml;base64,${svg.toString("base64")}`;
+    const logo = await readFile(path.join(process.cwd(), "public/brand/logo-on-dark.png"));
+    const wordmark = `data:image/png;base64,${logo.toString("base64")}`;
     return new ImageResponse(
       (
         <div
@@ -52,13 +52,13 @@ export async function GET(_req: Request, ctx: RouteContext<"/og/[file]">) {
             flexDirection: "column",
             justifyContent: "center",
             padding: "80px",
-            backgroundColor: "#15121d",
+            backgroundColor: "#0b1424",
             backgroundImage:
-              "radial-gradient(circle at 10% 0%, rgba(61,123,240,0.45), transparent 55%), radial-gradient(circle at 90% 100%, rgba(235,199,217,0.35), transparent 55%)",
+              "radial-gradient(circle at 10% 0%, rgba(108,134,153,0.40), transparent 55%), radial-gradient(circle at 90% 100%, rgba(47,86,119,0.45), transparent 55%)",
           }}
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={wordmark} alt="" width={720} height={133} />
+          <img src={wordmark} alt="" width={600} height={270} />
           <div style={{ marginTop: 44, fontSize: 40, color: "rgba(255,255,255,0.88)", maxWidth: 980, lineHeight: 1.25 }}>{dict.meta.ogTagline}</div>
           <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 14, display: "flex", backgroundImage: gradient }} />
         </div>
@@ -76,9 +76,9 @@ export async function GET(_req: Request, ctx: RouteContext<"/og/[file]">) {
           width: "100%",
           height: "100%",
           display: "flex",
-          backgroundColor: "#fdfcfe",
+          backgroundColor: "#fbfcfe",
           backgroundImage:
-            "radial-gradient(circle at 0% 0%, rgba(61,123,240,0.22), transparent 55%), radial-gradient(circle at 100% 100%, rgba(180,140,225,0.25), transparent 55%)",
+            "radial-gradient(circle at 0% 0%, rgba(108,134,153,0.24), transparent 55%), radial-gradient(circle at 100% 100%, rgba(47,86,119,0.18), transparent 55%)",
         }}
       >
         <div style={{ width: 560, height: "100%", display: "flex", alignItems: "center", justifyContent: "center", padding: 44 }}>
@@ -91,7 +91,7 @@ export async function GET(_req: Request, ctx: RouteContext<"/og/[file]">) {
               justifyContent: "center",
               backgroundColor: "#ffffff",
               borderRadius: 32,
-              border: "1px solid #e8e3f0",
+              border: "1px solid #e2e8ef",
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -99,11 +99,11 @@ export async function GET(_req: Request, ctx: RouteContext<"/og/[file]">) {
           </div>
         </div>
         <div style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center", paddingRight: 60 }}>
-          <div style={{ fontSize: 26, color: "#5a5566" }}>{brandName(product.brand)}</div>
-          <div style={{ marginTop: 8, fontSize: 54, fontWeight: 700, color: "#15121d", lineHeight: 1.08 }}>{product.name}</div>
-          <div style={{ marginTop: 26, fontSize: 46, fontWeight: 700, color: "#15121d" }}>{price}</div>
-          <div style={{ marginTop: 12, fontSize: 24, color: "#5a5566" }}>{dict.meta.ogBadge}</div>
-          <div style={{ marginTop: 36, fontSize: 30, fontWeight: 700, color: "#3d7bf0" }}>AventiPC</div>
+          <div style={{ fontSize: 26, color: "#4e5b6b" }}>{brandName(product.brand)}</div>
+          <div style={{ marginTop: 8, fontSize: 54, fontWeight: 700, color: "#0f1b2d", lineHeight: 1.08 }}>{product.name}</div>
+          <div style={{ marginTop: 26, fontSize: 46, fontWeight: 700, color: "#0f1b2d" }}>{price}</div>
+          <div style={{ marginTop: 12, fontSize: 24, color: "#4e5b6b" }}>{dict.meta.ogBadge}</div>
+          <div style={{ marginTop: 36, fontSize: 30, fontWeight: 700, color: "#2f5677" }}>FindBetter</div>
         </div>
         <div style={{ position: "absolute", left: 0, right: 0, bottom: 0, height: 14, display: "flex", backgroundImage: gradient }} />
       </div>

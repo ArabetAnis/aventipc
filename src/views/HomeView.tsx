@@ -51,7 +51,7 @@ export function HomeView({ locale, dict }: { locale: Locale; dict: Dictionary })
           {themeKeys.map((theme) => (
             <div key={theme}>
               <h3 className="font-display text-lg font-semibold">
-                <Link href={href(locale, { kind: "theme", theme })} className="hover:text-aventi-blue">
+                <Link href={href(locale, { kind: "theme", theme })} className="hover:text-accent">
                   {dict.themes[theme].label}
                 </Link>
               </h3>

@@ -20,7 +20,7 @@ export function ProductCard({ product, locale, dict, priority = false }: Product
   const image = product.images[0];
   const url = href(locale, { kind: "product", slug: product.slug });
   return (
-    <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-white transition-colors duration-200 hover:border-lilac">
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-white transition-colors duration-200 hover:border-accent-soft">
       <div className="relative aspect-[4/3] bg-white">
         {image ? (
           <Image

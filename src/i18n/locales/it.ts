@@ -6,7 +6,7 @@ import type { Dictionary } from "../types";
  */
 const it: Dictionary = {
   meta: {
-    homeTitle: "AventiPC — PC e portatili usati come nuovi, con foto reali",
+    homeTitle: "FindBetter — PC e portatili usati come nuovi, con foto reali",
     homeDescription:
       "PC e portatili usati come nuovi: Lenovo ThinkBook e Dell Latitude testati, con foto reali dell'esemplare. Acquisto protetto su Vinted.",
     tagline: "PC e portatili usati come nuovi, fotografati e descritti per quello che sono.",
@@ -16,7 +16,7 @@ const it: Dictionary = {
   countries: { IT: "Italia", FR: "Francia", BE: "Belgio", ES: "Spagna", DE: "Germania" },
   ui: {
     skipToContent: "Vai al contenuto",
-    homeAria: "AventiPC, torna alla home",
+    homeAria: "FindBetter, torna alla home",
     mainMenu: "Menu principale",
     openMenu: "Apri il menu",
     closeMenu: "Chiudi il menu",
@@ -60,7 +60,7 @@ const it: Dictionary = {
       intro:
         "Notebook e mini PC usati in condizioni come nuove, testati e fotografati uno per uno. Ogni computer si acquista su Vinted con la Protezione acquisti.",
       metaDescription:
-        "Tutti i PC e portatili usati AventiPC: Lenovo ThinkBook, Dell Latitude Rugged e ThinkCentre come nuovi, con foto reali. Acquisto su Vinted.",
+        "Tutti i PC e portatili usati FindBetter: Lenovo ThinkBook, Dell Latitude Rugged e ThinkCentre come nuovi, con foto reali. Acquisto su Vinted.",
       count: (n) => (n === 1 ? "1 computer in vendita" : `${n} computer in vendita`),
     },
     brand: {
@@ -108,7 +108,7 @@ const it: Dictionary = {
     ],
     featuredTitle: "In vendita ora",
     featuredText: "Ogni computer è un esemplare unico: quando è venduto, sparisce dal sito.",
-    whyTitle: "Perché comprare da AventiPC",
+    whyTitle: "Perché comprare da FindBetter",
     searchesTitle: "PC e portatili usati nella tua città",
     searchesText: "Guide e disponibilità per chi cerca un computer a Roma, Milano, Napoli, Torino e Bologna.",
     faqTitle: "Domande frequenti",
@@ -281,9 +281,9 @@ const it: Dictionary = {
     about: {
       title: "Chi siamo",
       metaTitle: "Chi siamo: PC usati come nuovi a Milano",
-      metaDescription: "AventiPC è un piccolo negozio di PC usati a Milano: scegliamo computer professionali come nuovi, li testiamo e li fotografiamo.",
+      metaDescription: "FindBetter è un piccolo negozio di PC usati a Milano: scegliamo computer professionali come nuovi, li testiamo e li fotografiamo.",
       intro:
-        "AventiPC è un piccolo negozio di computer usati a Milano. Scegliamo notebook e mini PC professionali in condizioni come nuove, li testiamo e li mettiamo in vendita con foto reali e una descrizione onesta.",
+        "FindBetter è un piccolo negozio di computer usati a Milano. Scegliamo notebook e mini PC professionali in condizioni come nuove, li testiamo e li mettiamo in vendita con foto reali e una descrizione onesta.",
       sections: [
         {
           heading: "Cosa facciamo",
@@ -308,7 +308,7 @@ const it: Dictionary = {
     howToBuy: {
       title: "Come acquistare",
       metaTitle: "Come acquistare su Vinted in sicurezza",
-      metaDescription: "I computer AventiPC si acquistano su Vinted: pagamento, spedizione e Protezione acquisti sono gestiti dalla piattaforma.",
+      metaDescription: "I computer FindBetter si acquistano su Vinted: pagamento, spedizione e Protezione acquisti sono gestiti dalla piattaforma.",
       intro: "Su questo sito trovi foto e caratteristiche dei computer in vendita. L'acquisto vero e proprio avviene su Vinted.",
       sections: [
         {
@@ -332,10 +332,10 @@ const it: Dictionary = {
     contact: {
       title: "Contatti",
       metaTitle: "Contatti",
-      metaDescription: "Scrivi a info@aventipc.com o chiama il +39 02 1234 5678 dal lunedì al venerdì, 9–18, per domande sui computer in vendita.",
+      metaDescription: "Scrivi a info@findbetter.eu o chiama il +39 02 1234 5678 dal lunedì al venerdì, 9–18, per domande sui computer in vendita.",
       intro: "Per domande su un computer, altre foto o un appuntamento per vederlo di persona puoi scriverci o chiamarci.",
       sections: [
-        { heading: "Email", paragraphs: ["Scrivi a info@aventipc.com. Rispondiamo di solito entro un giorno lavorativo."] },
+        { heading: "Email", paragraphs: ["Scrivi a info@findbetter.eu. Rispondiamo di solito entro un giorno lavorativo."] },
         { heading: "Telefono", paragraphs: ["Chiama il +39 02 1234 5678 dal lunedì al venerdì, dalle 9 alle 18."] },
         { heading: "Dove siamo", paragraphs: ["Via Alessandro Volta 12, 20121 Milano. Visite solo su appuntamento."] },
       ],
@@ -343,13 +343,13 @@ const it: Dictionary = {
     privacy: {
       title: "Privacy",
       metaTitle: "Informativa privacy",
-      metaDescription: "Quali dati personali raccoglie AventiPC quando visiti il sito o ci contatti, perché li usa e quali diritti hai secondo il GDPR.",
+      metaDescription: "Quali dati personali raccoglie FindBetter quando visiti il sito o ci contatti, perché li usa e quali diritti hai secondo il GDPR.",
       intro:
         "Questa informativa spiega quali dati personali trattiamo quando visiti il sito o ci scrivi, e quali diritti hai secondo il Regolamento UE 2016/679 (GDPR).",
       sections: [
         {
           heading: "Titolare del trattamento",
-          paragraphs: ["Il titolare è AventiPC, Via Alessandro Volta 12, 20121 Milano. Per ogni richiesta sulla privacy scrivi a info@aventipc.com."],
+          paragraphs: ["Il titolare è FindBetter, Via Alessandro Volta 12, 20121 Milano. Per ogni richiesta sulla privacy scrivi a info@findbetter.eu."],
         },
         {
           heading: "Quali dati raccogliamo",
@@ -366,7 +366,7 @@ const it: Dictionary = {
         {
           heading: "I tuoi diritti",
           paragraphs: [
-            "Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati scrivendo a info@aventipc.com. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.",
+            "Puoi chiedere l'accesso, la rettifica o la cancellazione dei tuoi dati scrivendo a info@findbetter.eu. Puoi anche presentare reclamo al Garante per la protezione dei dati personali.",
           ],
         },
       ],
@@ -375,10 +375,10 @@ const it: Dictionary = {
       title: "Termini e condizioni",
       metaTitle: "Termini e condizioni",
       metaDescription:
-        "Condizioni d'uso del sito AventiPC: il sito presenta computer usati, la vendita avviene su Vinted secondo le condizioni della piattaforma.",
-      intro: "Questo sito presenta i computer usati messi in vendita da AventiPC. Usandolo accetti le condizioni che seguono.",
+        "Condizioni d'uso del sito FindBetter: il sito presenta computer usati, la vendita avviene su Vinted secondo le condizioni della piattaforma.",
+      intro: "Questo sito presenta i computer usati messi in vendita da FindBetter. Usandolo accetti le condizioni che seguono.",
       sections: [
-        { heading: "Chi siamo", paragraphs: ["Il sito è gestito da AventiPC, Via Alessandro Volta 12, 20121 Milano, email info@aventipc.com."] },
+        { heading: "Chi siamo", paragraphs: ["Il sito è gestito da FindBetter, Via Alessandro Volta 12, 20121 Milano, email info@findbetter.eu."] },
         {
           heading: "Informazioni sui prodotti",
           paragraphs: [
@@ -415,7 +415,7 @@ const it: Dictionary = {
         metaDescription: (c) =>
           `PC portatili usati a ${c.name}${c.priceFrom ? ` da ${c.priceFrom}` : ""}: Lenovo e Dell come nuovi, testati e con foto reali. Acquisto protetto su Vinted.`,
         intro: (c) => [
-          `Cerchi PC portatili usati a ${c.name}? AventiPC seleziona notebook professionali Lenovo e Dell in condizioni come nuove: ogni computer è testato, descritto nel dettaglio e fotografato per quello che è.`,
+          `Cerchi PC portatili usati a ${c.name}? FindBetter seleziona notebook professionali Lenovo e Dell in condizioni come nuove: ogni computer è testato, descritto nel dettaglio e fotografato per quello che è.`,
           c.pickup
             ? `A ${c.name} puoi anche vedere e ritirare il computer di persona, su appuntamento. In alternativa lo acquisti su Vinted e lo ricevi con la spedizione della piattaforma.`
             : `Il computer arriva a ${c.name} con la spedizione di Vinted: paghi sulla piattaforma e sei coperto dalla Protezione acquisti fino alla consegna.`,
