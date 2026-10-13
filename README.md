@@ -22,6 +22,12 @@ Imposta `NEXT_PUBLIC_SITE_URL` (default `https://findbetter.eu`) per canonical, 
 - Pagine parola chiave × città: 3 temi (usati, economici, per studenti) × 5 città per paese → 90 pagine. Città: `src/i18n/cities.ts`.
 - Ogni pagina è HTML prerenderizzato con title, meta description, canonical, hreflang, Open Graph (`/og/*.png`), JSON-LD e una sola H1. Sitemap con alternates in `src/app/sitemap.ts`.
 
+## Verifica SEO
+
+```bash
+NEXT_PUBLIC_STATIC_EXPORT=1 pnpm build && python3 scripts/seo_audit.py https://findbetter.eu
+```
+
 ## Struttura
 
 - `src/data/products.ts` — i computer in vendita (prezzi in centesimi, link Vinted, immagini). Prezzo `null` = "prezzo su richiesta"; senza `vinted` il pulsante diventa "Chiedi disponibilità".

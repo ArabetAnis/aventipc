@@ -188,7 +188,7 @@ const fr: Dictionary = {
     },
     "dell-latitude-14-rugged-5414": {
       kind: "PC portable durci",
-      title: "Dell Latitude 5414 Rugged d'occasion, comme neuf",
+      title: "Dell Latitude 5414 Rugged d'occasion",
       shortDescription:
         "PC portable durci 14\" Full HD tactile, Intel Core i5-6300U, 8 Go et SSD 256 Go. Ports série RS232, clavier rétroéclairé, comme neuf.",
       description: [

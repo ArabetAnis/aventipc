@@ -43,7 +43,7 @@ export function Hero({ title, subtitle, primary, secondary, image }: HeroProps) 
             priority
             fetchPriority="high"
             sizes="(min-width: 1024px) 620px, 90vw"
-            className="relative h-auto w-full drop-shadow-[0_30px_50px_rgba(21,18,29,0.25)]"
+            className="relative h-auto w-full drop-shadow-[0_30px_50px_rgba(11,20,36,0.28)]"
           />
         </div>
       </Container>

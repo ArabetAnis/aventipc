@@ -257,7 +257,7 @@ const de: Dictionary = {
   },
   brands: {
     lenovo: {
-      title: "Lenovo gebraucht: ThinkBook, ThinkCentre wie neu",
+      title: "Lenovo ThinkBook und ThinkCentre gebraucht",
       metaDescription:
         "Gebrauchte Laptops und Mini-PCs von Lenovo wie neu, mit echten Fotos und geprüften technischen Daten. Sicher kaufen über Vinted mit Käuferschutz.",
       tagline: "ThinkBook und ThinkCentre gebraucht, wie neu.",
@@ -423,7 +423,7 @@ const de: Dictionary = {
         productsTitle: "Verfügbare gebrauchte Laptops",
       },
       city: {
-        title: (c) => `Gebrauchte Laptops in ${c.name}, wie neu`,
+        title: (c) => (c.name.length > 12 ? `Gebrauchte Laptops in ${c.name}` : `Gebrauchte Laptops in ${c.name}, wie neu`),
         h1: (c) => `Gebrauchte Laptops in ${c.name}`,
         metaDescription: (c) =>
           `Gebrauchte Laptops in ${c.name}${c.priceFrom ? ` ab ${c.priceFrom}` : ""}: Lenovo und Dell wie neu, getestet und mit echten Fotos. Kauf mit Käuferschutz auf Vinted.`,
@@ -478,7 +478,7 @@ const de: Dictionary = {
         productsTitle: "Verfügbare günstige Laptops",
       },
       city: {
-        title: (c) => `Günstige Laptops in ${c.name}, gebraucht`,
+        title: (c) => (c.name.length > 12 ? `Günstige Laptops in ${c.name}` : `Günstige Laptops in ${c.name}, gebraucht`),
         h1: (c) => `Günstige Laptops in ${c.name}`,
         metaDescription: (c) =>
           `Günstige Laptops in ${c.name}${c.priceFrom ? ` ab ${c.priceFrom}` : ""}: gebrauchte Notebooks von Lenovo und Dell wie neu, mit echten Fotos. Kauf mit Käuferschutz auf Vinted.`,

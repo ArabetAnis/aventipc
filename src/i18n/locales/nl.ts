@@ -187,7 +187,7 @@ const nl: Dictionary = {
     },
     "dell-latitude-14-rugged-5414": {
       kind: "Rugged laptop",
-      title: "Tweedehands Dell Latitude 5414 Rugged, als nieuw",
+      title: "Dell Latitude 5414 Rugged, tweedehands",
       shortDescription:
         "Rugged 14\" Full HD-laptop met touchscreen, Intel Core i5-6300U, 8 GB en 256 GB SSD. Seriële RS232-poorten, verlicht toetsenbord, als nieuw.",
       description: [

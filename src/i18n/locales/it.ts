@@ -257,7 +257,7 @@ const it: Dictionary = {
   },
   brands: {
     lenovo: {
-      title: "Lenovo usati: ThinkBook e ThinkCentre come nuovi",
+      title: "Lenovo usati: ThinkBook e ThinkCentre",
       metaDescription: "Portatili e mini PC Lenovo usati come nuovi, con foto reali e caratteristiche verificate. Acquisto protetto su Vinted.",
       tagline: "ThinkBook e ThinkCentre usati, come nuovi.",
       whyTitle: "Perché scegliere un Lenovo usato",

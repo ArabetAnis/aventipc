@@ -23,7 +23,7 @@ export function LanguageSwitcher({ links, label }: { links: LanguageLink[]; labe
         <Globe aria-hidden="true" className="size-4" />
         <span className="uppercase">{current?.locale}</span>
       </summary>
-      <ul className="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-card border border-line bg-white py-1 shadow-[0_20px_40px_-20px_rgba(21,18,29,0.25)]">
+      <ul className="absolute right-0 z-50 mt-2 w-48 overflow-hidden rounded-card border border-line bg-white py-1 shadow-[0_20px_40px_-20px_rgba(11,20,36,0.28)]">
         {links.map((l) => (
           <li key={l.locale}>
             <Link
